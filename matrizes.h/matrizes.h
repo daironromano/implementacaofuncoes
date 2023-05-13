@@ -17,17 +17,18 @@ int main()
         int nlinhas;
         int mcolunas;
         complexo **dados;
-    } matriz_complexo;
+    } matrizComplexo;
 
     //assinatura das funções matrizes.c
 
     void transposta();
     void conjugada();
     void hermitiana();
-    void soma();
+    int matrizSoma(matriz1[][], matriz2[][], somaMatriz);
     void subtracao();
     void produtoEscalar();
     void produtoMatricial();
+
 
     return 0;
 }

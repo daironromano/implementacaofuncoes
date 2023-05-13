@@ -4,6 +4,13 @@
 
 int main()
 {
-    printf("Hello world!\n");
+    //NOMES
+
+    printf("Nome: Dairon Romano da Silva\n");
+    printf("Matricula: 202206840032\n");
+
+
+
+
     return 0;
 }
