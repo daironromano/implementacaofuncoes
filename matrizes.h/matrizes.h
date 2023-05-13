@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
+#ifndef matrizes_h
+#define matrizes_h
 
 int main()
 {
@@ -24,11 +24,13 @@ int main()
     void transposta();
     void conjugada();
     void hermitiana();
-    int matrizSoma(matriz1[][], matriz2[][], somaMatriz);
-    void subtracao();
+    void somaMatriz(int m1[3][3], int m2[3][3], int resultado[3][3], int linhas, int colunas);
+    void subtracaoMatriz(int m1[3][3], int m2[3][3], int resultado[3][3], int linhas, int colunas);
     void produtoEscalar();
     void produtoMatricial();
 
 
     return 0;
 }
+
+#endif /* matrizes_h */
