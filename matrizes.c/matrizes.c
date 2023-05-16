@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "matrizes.h"
 
 // PROTOTIPOS DAS FUNCOES
 void somaMatriz(int m1[3][3], int m2[3][3], int resultado[3][3]);
