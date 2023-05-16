@@ -1,50 +1,67 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// FUN플O PRINCIPAL
+// PROTOTIPOS DAS FUNCOES
+void somaMatriz(int m1[3][3], int m2[3][3], int resultado[3][3]);
+void subtracaoMatriz(int m1[3][3], int m2[3][3], int resultado[3][3]);
+void imprimirMatriz(int matriz[3][3]);
 
+// FUNCAO PRINCIPAL
 int main()
 {
     // TESTE MATRIZ SOMA
-    void somaMatriz(int m1[3][3], int m2[3][3], int resultado[3][3], int linhas, int colunas);
-    int m1[3][3] = {1,2,3,4,5,6,7,8,9};
-    int m2[3][3] = {1,2,3,4,5,6,7,8,9};
-    int resultado [3][3];
-    somaMatriz(m1, m2, resultado, 3, 3);
+        int m1[3][3] = {1,2,3,4,5,6,7,8,9};
+        int m2[3][3] = {1,2,3,4,5,6,7,8,9};
+        int resultado [3][3];
+
+        printf("Matriz Soma 1 \n");
+        imprimirMatriz(m1);
+        printf("Matriz Soma 2 \n");
+        imprimirMatriz(m2);
+
+        printf("Resultado \n");
+        somaMatriz(m1, m2, resultado);
+        imprimirMatriz(resultado);
 
     // TESTE MATRIZ SUBTRACAO
-    void subtracaoMatriz(int ma1[3][3], int ma2[3][3], int resul[3][3], int linhas, int colunas);
-    int ma1[3][3] = {1,2,3,4,5,6,7,8,9};
-    int ma2[3][3] = {1,2,3,4,5,6,7,8,9};
-    int resul [3][3];
-    subtracaoMatriz(m1, m2, resul, 3, 3);
+        printf("Matriz Subtracao 1\n");
+        imprimirMatriz(m1);
+        printf("Matriz Subtracao 2\n");
+        imprimirMatriz(m2);
+        printf("Resultado\n");
+        subtracaoMatriz(m1, m2, resultado);
+        imprimirMatriz(resultado);
+
 
 }
 
-//FUN합ES IMPLEMENTADAS
+//FUNCAO IMPRIMIR MATRIZES
+void imprimirMatriz(int matriz[3][3]){
+    for(int linhas=0; linhas<3; linhas++) {
+        for(int colunas=0;colunas<3;colunas++) {
+            printf("%i ", matriz[linhas][colunas]);
+        }
+        printf("\n");
+    }
+}
 
-    //FUN플O SOMA
-void somaMatriz(int m1[3][3], int m2[3][3], int resultado[3][3], int linhas, int colunas) {
-    int i, j;
-    for (i = 0; i < linhas; i++) {
-        for (j = 0; j < colunas; j++) {
-            resultado[i][j] = m1[i][j] + m2[i][j];
+//FUNCOES IMPLEMENTADAS
+    //FUNCAO SOMA
+void somaMatriz(int m1[3][3], int m2[3][3], int resultado[3][3]) {
+    for (int linhas=0;linhas<3; linhas++) {
+        for (int colunas = 0; colunas< 3;colunas++) {
+            resultado[linhas][colunas] = m1[linhas][colunas] + m2[linhas][colunas];
         }
     }
 
 }
 
- //FUN플O SUBTRACAO
-void subtracaoMatriz(int ma1[3][3], int ma2[3][3], int resul[3][3], int linhas, int colunas) {
-    int i, j;
-    for (i = 0; i < linhas; i++) {
-        for (j = 0; j < colunas; j++) {
-            resul[i][j] = ma1[i][j] - ma2[i][j];
+//FUNCAO SUBTRACAO
+void subtracaoMatriz(int m1[3][3], int m2[3][3], int resultado[3][3]) {
+    for (int linhas=0;linhas<3; linhas++) {
+        for (int colunas = 0; colunas< 3;colunas++) {
+            resultado[linhas][colunas] = m1[linhas][colunas] - m2[linhas][colunas];
         }
     }
 
 }
-
-
-
-
