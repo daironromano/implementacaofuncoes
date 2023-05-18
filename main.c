@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "matrizes.h"
 
 int main()
 {
@@ -13,6 +14,8 @@ int main()
 
     /// TESTE TODAS AS FUNÇÕES
 
+    void testeTodos();
+    testeTodos();
 
     return 0;
 }

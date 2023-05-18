@@ -1,8 +1,6 @@
-#ifndef matrizes_h
-#define matrizes_h
+#ifndef MATRIZES_H
+#define MATRIZES_H
 
-int main()
-{
     ///ESTRUTURA DE DADOS COMPLEXO
     typedef struct{
         float real;
@@ -18,10 +16,5 @@ int main()
     void subtracaoMatriz(Complexo** m1, Complexo** m2, Complexo** resultadoSub);
     Complexo produtoEscalar(Complexo* v1, Complexo* v2, int tamanho);
     void produtoMatricial(Complexo** mat1, Complexo** mat2, Complexo** resultado, int linhas1, int colunas1, int colunas2);
-
-
-
-    return 0;
-}
 
 #endif
