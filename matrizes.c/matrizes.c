@@ -15,6 +15,9 @@ void subtracaoMatriz(Complexo** m1, Complexo** m2, Complexo** resultadoSub);
 Complexo produtoEscalar(Complexo* v1, Complexo* v2, int tamanho);
 void produtoMatricial(Complexo** mat1, Complexo** mat2, Complexo** resultado, int linhas1, int colunas1, int colunas2);
 Complexo** matrizTransposta(Complexo** matriz, int linhas, int colunas);
+Complexo** matrizHermitiana(Complexo** matriz, int linhas, int colunas);
+Complexo** matrizConjugada(Complexo** matriz, int linhas, int colunas);
+
 
 void produtoMatricial(Complexo** mat1, Complexo** mat2, Complexo** resultado, int linhas1, int colunas1, int colunas2);
 /// FUNCAO PRINCIPAL
@@ -265,7 +268,62 @@ printf("\n");
         matriz = matrizTransposta(matriz, linhas, colunas);
         imprimirMatriz(matriz, linhas, colunas);
 printf("\n");
+        printf("======TESTE DA OPERACAO_CONJUGADA======\n");
 
+        Complexo** conjugada = (Complexo*)malloc(linhas * sizeof(Complexo));
+        for (int i = 0; i < linhas; i++) {
+        conjugada[i] = (Complexo*)malloc(colunas * sizeof(Complexo));
+        for (int j = 0; j < colunas; j++) {
+            conjugada[i][j].real = i + j;
+            conjugada[i][j].imag = i - j;
+        }
+    }
+
+        /// ATRIBUICAO DE VALORES CONJUGADA
+        conjugada[0][0].real = 3;    conjugada[0][0].imag = -2;
+        conjugada[0][1].real = -5;   conjugada[0][1].imag = 3;
+        conjugada[0][2].real = 2;    conjugada[0][2].imag = 4;
+        conjugada[1][0].real = 3;    conjugada[1][0].imag = 3;
+        conjugada[1][1].real = -4;   conjugada[1][1].imag = 2;
+        conjugada[1][2].real = 6;    conjugada[1][2].imag = 3;
+        conjugada[2][0].real = -2;   conjugada[2][0].imag = 7;
+        conjugada[2][1].real = -3;   conjugada[2][1].imag = -8;
+        conjugada[2][2].real = 1;    conjugada[2][2].imag = 9;
+
+        printf("Matriz original:\n");
+        imprimirMatriz(conjugada, linhas, colunas);
+        Complexo** matrizConjugadaResult = matrizConjugada(conjugada, linhas, colunas);
+
+        printf("\nMatriz conjugada:\n");
+        imprimirMatriz(matrizConjugadaResult, linhas, colunas);
+
+        /// TESTE FUNCAO HERMITIANA
+        printf("======TESTE DA OPERACAO_HERMITIANA======\n");
+        Complexo** hermitiana = (Complexo*)malloc(linhas * sizeof(Complexo));
+        for (int i = 0; i < linhas; i++) {
+            hermitiana[i] = (Complexo*)malloc(colunas * sizeof(Complexo));
+                for (int j = 0; j < colunas; j++) {
+                    hermitiana[i][j].real = i + j;
+                    hermitiana[i][j].imag = i - j;
+        }
+    }
+    /// ATRIBUINDO VALORES PARA TESTE HERMITIANA
+    hermitiana[0][0].real = 2;    hermitiana[0][0].imag = -3;
+    hermitiana[0][1].real = -5;   hermitiana[0][1].imag = 6;
+    hermitiana[0][2].real = 7;    hermitiana[0][2].imag = 4;
+    hermitiana[1][0].real = 21;    hermitiana[1][0].imag = 7;
+    hermitiana[1][1].real = -4;   hermitiana[1][1].imag = 2;
+    hermitiana[1][2].real = -5;    hermitiana[1][2].imag = 9;
+    hermitiana[2][0].real = -22;   hermitiana[2][0].imag = 7;
+    hermitiana[2][1].real = -3;   hermitiana[2][1].imag = -11;
+    hermitiana[2][2].real = 13;    hermitiana[2][2].imag = 9;
+
+    printf("Matriz original:\n");
+    imprimirMatriz(hermitiana, linhas, colunas);
+    Complexo** matrizHermitianaResult = matrizHermitiana(hermitiana, linhas, colunas);
+
+    printf("\nMatriz hermitiana:\n");
+    imprimirMatriz(matrizHermitianaResult, linhas, colunas);
 
     /// LIBERAR MEMORIA SOMA E SUBTRACAO
     for(int i=0;i<3;i++){
@@ -302,7 +360,18 @@ printf("\n");
     }
     free(matriz);
 
-      /// LIBERAR MEMORIA PRODUTO_MATRICIAL
+    /// LIBERAR MEMORIA HERMITIANA
+    for(int i=0;i<linhas;i++){
+        free (hermitiana[i]);
+    }
+    free(hermitiana);
+    /// LIBERAR MEMORIA CONJUGADA
+    for(int i=0;i<linhas;i++){
+        free (conjugada[i]);
+    }
+    free(conjugada);
+
+    /// LIBERAR MEMORIA PRODUTO_MATRICIAL
     for (int i = 0; i < linhas; i++) {
         free(matriz1[i]);
     }
@@ -380,6 +449,31 @@ Complexo** matrizTransposta(Complexo** matriz, int linhas, int colunas){
         }
     }
     return transposta;
+}
+
+    /// FUNCAO HERMITIANA
+Complexo** matrizHermitiana(Complexo** matriz, int linhas, int colunas) {
+    Complexo** hermitiana = (Complexo*)malloc(linhas * sizeof(Complexo));
+    for (int i = 0; i < linhas; i++) {
+        hermitiana[i] = (Complexo*)malloc(colunas * sizeof(Complexo));
+        for (int j = 0; j < colunas; j++) {
+            hermitiana[i][j].real = matriz[j][i].real;
+            hermitiana[i][j].imag = -matriz[j][i].imag;
+        }
+    }
+    return hermitiana;
+}
+          /// FUNCAO CONJUGADA
+Complexo** matrizConjugada(Complexo** matriz, int linhas, int colunas) {
+    Complexo** conjugada = (Complexo*)malloc(linhas * sizeof(Complexo));
+    for (int i = 0; i < linhas; i++) {
+        conjugada[i] = (Complexo*)malloc(colunas * sizeof(Complexo));
+        for (int j = 0; j < colunas; j++) {
+            conjugada[i][j].real = matriz[i][j].real;
+            conjugada[i][j].imag = -matriz[i][j].imag;
+        }
+    }
+    return conjugada;
 }
 
 
