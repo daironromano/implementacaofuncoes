@@ -3,13 +3,14 @@
 
 int main()
 {
-    //ESTRUTURA DE DADOS
+    ///ESTRUTURA DE DADOS COMPLEXO
     typedef struct{
         float real;
         float imag;
     } Complexo;
 
-    //ASSINATURAS
+
+    ///ASSINATURAS
     Complexo** matrizTransposta(Complexo** matriz, int linhas, int colunas);
     Complexo** matrizConjugada(Complexo** matriz, int linhas, int colunas);
     Complexo** matrizHermitiana(Complexo** matriz, int linhas, int colunas);

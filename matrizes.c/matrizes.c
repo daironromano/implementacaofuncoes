@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "matrizes.h"
 
 ///ESTRUTURA DE DADOS COMPLEXO
     typedef struct{
@@ -138,8 +139,8 @@ printf("\n");
         subtracaoMatriz(m1, m2, resultadoSub);
         imprimirMatriz(resultadoSub, linhas, colunas);
 printf("\n");
-    /// TESTE PRODUTO_ESCALAR
-        /// ALOCACAO DE MEMORIA PRODUTO ESCALAR
+        /// TESTE PRODUTO_ESCALAR
+            /// ALOCACAO DE MEMORIA PRODUTO ESCALAR
         Complexo* v1 = (Complexo*)malloc(3*sizeof(Complexo));
         Complexo* v2 = (Complexo*)malloc(3*sizeof(Complexo));
         Complexo* ve1 = (Complexo*)malloc(3*sizeof(Complexo));
@@ -200,9 +201,10 @@ printf("\n");
         matriz1[1][0].real = 1;  matriz1[1][0].imag = 2;
         matriz1[1][1].real = 3;  matriz1[1][1].imag = 4;
         matriz1[1][2].real = 8;  matriz1[1][2].imag = 6;
-        m2[1][0].real = 2;       matriz2[1][0].imag = 3;
-        m2[1][1].real = 4;       matriz2[1][1].imag = 5;
-        m2[1][2].real = 6;       matriz2[1][2].imag = 7;
+
+        matriz2[1][0].real = 2;  matriz2[1][0].imag = 3;
+        matriz2[1][1].real = 4;  matriz2[1][1].imag = 5;
+        matriz2[1][2].real = 6;  matriz2[1][2].imag = 7;
 
         matriz1[2][0].real = 7;  matriz1[2][0].imag = 18;
         matriz1[2][1].real = 9;  matriz1[2][1].imag = 10;
@@ -221,8 +223,8 @@ printf("\n");
         produtoMatricial(matriz1, matriz2, resultadoProduto, linhas, colunas, colunas);
         imprimirMatriz(resultadoProduto, linhas, colunas);
 printf("\n");
-    /// TESTE TRANSPOSTA
-        /// ALOCACAO DE MEMORIA TRANSPOSTA
+        /// TESTE TRANSPOSTA
+            /// ALOCACAO DE MEMORIA TRANSPOSTA
         Complexo** matriz = (Complexo**)malloc(sizeof(Complexo*)*linhas);
             for(int i=0; i<linhas;i++){
                 matriz[i]=(Complexo*)malloc(colunas*sizeof(Complexo));
@@ -305,87 +307,87 @@ printf("\n");
                 for (int j = 0; j < colunas; j++) {
                     hermitiana[i][j].real = i + j;
                     hermitiana[i][j].imag = i - j;
+            }
         }
-    }
-    /// ATRIBUINDO VALORES PARA TESTE HERMITIANA
-    hermitiana[0][0].real = 2;    hermitiana[0][0].imag = -3;
-    hermitiana[0][1].real = -5;   hermitiana[0][1].imag = 6;
-    hermitiana[0][2].real = 7;    hermitiana[0][2].imag = 4;
-    hermitiana[1][0].real = 21;    hermitiana[1][0].imag = 7;
-    hermitiana[1][1].real = -4;   hermitiana[1][1].imag = 2;
-    hermitiana[1][2].real = -5;    hermitiana[1][2].imag = 9;
-    hermitiana[2][0].real = -22;   hermitiana[2][0].imag = 7;
-    hermitiana[2][1].real = -3;   hermitiana[2][1].imag = -11;
-    hermitiana[2][2].real = 13;    hermitiana[2][2].imag = 9;
+        /// ATRIBUINDO VALORES PARA TESTE HERMITIANA
+        hermitiana[0][0].real = 2;    hermitiana[0][0].imag = -3;
+        hermitiana[0][1].real = -5;   hermitiana[0][1].imag = 6;
+        hermitiana[0][2].real = 7;    hermitiana[0][2].imag = 4;
+        hermitiana[1][0].real = 21;    hermitiana[1][0].imag = 7;
+        hermitiana[1][1].real = -4;   hermitiana[1][1].imag = 2;
+        hermitiana[1][2].real = -5;    hermitiana[1][2].imag = 9;
+        hermitiana[2][0].real = -22;   hermitiana[2][0].imag = 7;
+        hermitiana[2][1].real = -3;   hermitiana[2][1].imag = -11;
+        hermitiana[2][2].real = 13;    hermitiana[2][2].imag = 9;
 
-    printf("Matriz original:\n");
-    imprimirMatriz(hermitiana, linhas, colunas);
-    Complexo** matrizHermitianaResult = matrizHermitiana(hermitiana, linhas, colunas);
+        printf("Matriz original:\n");
+        imprimirMatriz(hermitiana, linhas, colunas);
+        Complexo** matrizHermitianaResult = matrizHermitiana(hermitiana, linhas, colunas);
 
-    printf("\nMatriz hermitiana:\n");
-    imprimirMatriz(matrizHermitianaResult, linhas, colunas);
+        printf("\nMatriz hermitiana:\n");
+        imprimirMatriz(matrizHermitianaResult, linhas, colunas);
 
-    /// LIBERAR MEMORIA SOMA E SUBTRACAO
-    for(int i=0;i<3;i++){
+        /// LIBERAR MEMORIA SOMA E SUBTRACAO
+        for(int i=0;i<3;i++){
         free(m1[i]);
         free(m2[i]);
         free(resultadoSoma[i]);
         free(resultadoSub[i]);
-    }
-    for(int i=0;i<3;i++){
+        }
+        for(int i=0;i<3;i++){
         free(ma1[i]);
         free(ma2[i]);
         free(resultadoSoma2[i]);
         free(resultadoSub2[i]);
-    }
+        }
 
-    free(m1);
-    free(m2);
-    free(resultadoSoma);
-    free(resultadoSub);
-    free(ma1);
-    free(ma2);
-    free(resultadoSoma2);
-    free(resultadoSub2);
+        free(m1);
+        free(m2);
+        free(resultadoSoma);
+        free(resultadoSub);
+        free(ma1);
+        free(ma2);
+        free(resultadoSoma2);
+        free(resultadoSub2);
 
-    /// LIBERAR MEMORIA PRODUTO_ESCALAR
-    free(v1);
-    free(v2);
-    free(ve1);
-    free(ve2);
+        /// LIBERAR MEMORIA PRODUTO_ESCALAR
+        free(v1);
+        free(v2);
+        free(ve1);
+        free(ve2);
 
-    /// LIBERAR MEMORIA TRANSPOSTA
-    for(int i=0;i<linhas;i++){
-        free(matriz[i]);
-    }
-    free(matriz);
+        /// LIBERAR MEMORIA TRANSPOSTA
+        for(int i=0;i<linhas;i++){
+            free(matriz[i]);
+        }
+        free(matriz);
 
-    /// LIBERAR MEMORIA HERMITIANA
-    for(int i=0;i<linhas;i++){
-        free (hermitiana[i]);
-    }
-    free(hermitiana);
-    /// LIBERAR MEMORIA CONJUGADA
-    for(int i=0;i<linhas;i++){
-        free (conjugada[i]);
-    }
-    free(conjugada);
+        /// LIBERAR MEMORIA HERMITIANA
+        for(int i=0;i<linhas;i++){
+            free (hermitiana[i]);
+        }
+        free(hermitiana);
+        /// LIBERAR MEMORIA CONJUGADA
+        for(int i=0;i<linhas;i++){
+            free (conjugada[i]);
+        }
+        free(conjugada);
 
-    /// LIBERAR MEMORIA PRODUTO_MATRICIAL
-    for (int i = 0; i < linhas; i++) {
-        free(matriz1[i]);
-    }
-    free(matriz1);
+        /// LIBERAR MEMORIA PRODUTO_MATRICIAL
+        for (int i = 0; i < linhas; i++) {
+            free(matriz1[i]);
+        }
+        free(matriz1);
 
-    for (int i = 0; i < colunas; i++) {
-        free(matriz2[i]);
-    }
-    free(matriz2);
+        for (int i = 0; i < colunas; i++) {
+            free(matriz2[i]);
+        }
+        free(matriz2);
 
-    for (int i = 0; i < linhas; i++) {
-        free(resultadoProduto[i]);
-    }
-    free(resultadoProduto);
+        for (int i = 0; i < linhas; i++) {
+            free(resultadoProduto[i]);
+        }
+        free(resultadoProduto);
 
 
     return 0;
@@ -451,7 +453,7 @@ Complexo** matrizTransposta(Complexo** matriz, int linhas, int colunas){
     return transposta;
 }
 
-    /// FUNCAO HERMITIANA
+        /// FUNCAO HERMITIANA
 Complexo** matrizHermitiana(Complexo** matriz, int linhas, int colunas) {
     Complexo** hermitiana = (Complexo*)malloc(linhas * sizeof(Complexo));
     for (int i = 0; i < linhas; i++) {
@@ -463,7 +465,7 @@ Complexo** matrizHermitiana(Complexo** matriz, int linhas, int colunas) {
     }
     return hermitiana;
 }
-          /// FUNCAO CONJUGADA
+        /// FUNCAO CONJUGADA
 Complexo** matrizConjugada(Complexo** matriz, int linhas, int colunas) {
     Complexo** conjugada = (Complexo*)malloc(linhas * sizeof(Complexo));
     for (int i = 0; i < linhas; i++) {
@@ -476,7 +478,7 @@ Complexo** matrizConjugada(Complexo** matriz, int linhas, int colunas) {
     return conjugada;
 }
 
-
+        /// FUNCAO PRODUT_MATRICIAL
 void produtoMatricial(Complexo** mat1, Complexo** mat2, Complexo** resultado, int linhas1, int colunas1, int colunas2){
     for (int i = 0; i < linhas1; i++) {
         for (int j = 0; j < colunas2; j++) {
