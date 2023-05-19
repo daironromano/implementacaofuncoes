@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "matrizes.h"
 
+void testeTodos();
 int main()
 {
     ///NOMES
@@ -14,8 +15,8 @@ int main()
 
     /// TESTE TODAS AS FUNÇÕES
 
-    void testeTodos();
-    testeTodos();
+   testeTodos();
 
     return 0;
 }
+

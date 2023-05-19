@@ -9,6 +9,8 @@
 
 
     ///ASSINATURAS
+    void imprimirMatriz(Complexo** matriz, int linhas, int colunas);
+    void imprimirVetor(Complexo* vetor, int linhas);
     Complexo** matrizTransposta(Complexo** matriz, int linhas, int colunas);
     Complexo** matrizConjugada(Complexo** matriz, int linhas, int colunas);
     Complexo** matrizHermitiana(Complexo** matriz, int linhas, int colunas);

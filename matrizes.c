@@ -487,13 +487,13 @@ void produtoMatricial(Complexo** mat1, Complexo** mat2, Complexo** resultado, in
 
 void testeTodos(){
 
-    void produtoMatricial();
-    Complexo** matrizConjugada();
-    Complexo** matrizHermitiana();
-    Complexo** matrizTransposta();
-    Complexo produtoEscalar();
-    void subtracaoMatriz();
-    void somaMatriz();
+    produtoMatricial();
+    Complexo** matrizConjugada = matrizConjugada();
+    Complexo** matrizHermitiana = matrizHermitiana();
+    Complexo** matrizTransposta = matrizTransposta();
+    Complexo produtoEscalar = produtoEscalar();
+    subtracaoMatriz();
+    somaMatriz();
 }
 
 
