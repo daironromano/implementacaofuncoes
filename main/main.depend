@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1684535930 source:c:\users\dairon romano\desktop\projetos 2\implementacoesfuncoes\main\main.c
-	<stdio.h>
-	<stdlib.h>
-	"matrizes.h"
-
-1684536311 c:\users\dairon romano\desktop\projetos 2\implementacoesfuncoes\main\matrizes.h
-
