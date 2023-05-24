@@ -1,0 +1,889 @@
+\doxysection{PROJETOS 2/implementacaofuncoes/matrizes.c File Reference}
+\hypertarget{matrizes_8c}{}\label{matrizes_8c}\index{PROJETOS 2/implementacaofuncoes/matrizes.c@{PROJETOS 2/implementacaofuncoes/matrizes.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \"{}matrizes.\+h\"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{matrizes_8c_a3aca1df60fb0befea07d8b5d7badd7ff}{teste\+Todos}} ()
+\item 
+void \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimir\+Matriz}} (\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}matriz, int linhas, int colunas)
+\begin{DoxyCompactList}\small\item\em FUNCAO IMPRIMIR MATRIZES. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{matrizes_8c_a00662e0c8fdc694d2a37f7c6c541aa2c}{imprimir\+Vetor}} (\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}vetor, int linhas)
+\begin{DoxyCompactList}\small\item\em FUNCAO IMPRIMIR VETOR. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{matrizes_8c_a975230634fbf9e092e99b0ff08e718e7}{soma\+Matriz}} (\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}m1, \mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}m2, \mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}resultado\+Soma)
+\begin{DoxyCompactList}\small\item\em FUNCAO SOMA. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{matrizes_8c_a13074e6c4a62f20f205c8b5a2439d678}{subtracao\+Matriz}} (\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}m1, \mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}m2, \mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}resultado\+Sub)
+\begin{DoxyCompactList}\small\item\em FUNCAO SUBTRACAO. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_complexo}{Complexo}} \mbox{\hyperlink{matrizes_8c_acbf5b5933a25aba75484ede005954230}{produto\+Escalar}} (\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}v1, \mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}v2, int tamanho)
+\begin{DoxyCompactList}\small\item\em FUNCAO PRODUTO\+\_\+\+ESCALAR. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{matrizes_8c_a5806896d911ce5c38b96d4120cc98317}{matriz\+Transposta}} (\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}matriz, int linhas, int colunas)
+\begin{DoxyCompactList}\small\item\em FUNCAO TRANSPOSTA. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{matrizes_8c_a8e7a9bd74290a2af7844255c4563a8ff}{matriz\+Hermitiana}} (\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}matriz, int linhas, int colunas)
+\begin{DoxyCompactList}\small\item\em FUNCAO HERMITIANA. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{matrizes_8c_adafcd065cf2f6e770ebdaeaba6be2d0b}{matriz\+Conjugada}} (\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}matriz, int linhas, int colunas)
+\begin{DoxyCompactList}\small\item\em FUNCAO CONJUGADA. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{matrizes_8c_a85dd71245c7be6c193de822a53e46f21}{produto\+Matricial}} (\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}mat1, \mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}mat2, \mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}resultado, int linhas1, int colunas1, int colunas2)
+\begin{DoxyCompactList}\small\item\em FUNCAO PRODUT\+\_\+\+MATRICIAL. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}\label{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33} 
+\index{matrizes.c@{matrizes.c}!imprimirMatriz@{imprimirMatriz}}
+\index{imprimirMatriz@{imprimirMatriz}!matrizes.c@{matrizes.c}}
+\doxysubsubsection{\texorpdfstring{imprimirMatriz()}{imprimirMatriz()}}
+{\footnotesize\ttfamily void imprimir\+Matriz (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{matriz,  }\item[{int}]{linhas,  }\item[{int}]{colunas }\end{DoxyParamCaption})}
+
+
+
+FUNCAO IMPRIMIR MATRIZES. 
+
+ASSINATURAS.
+
+Nas linhas de codigo a seguir estao todas as funcoes utilizadas na teste\+Todos Funcao para imprimir matrizes criada pera automatizar a impressao de matrizes, uma vez que precisariamos imprimir todas as matrizes solicitadas
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}} & matriz, int linhas, int colunas \\
+\hline
+\mbox{\texttt{ out}}  & {\em void} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00503\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00504\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<linhas;\ i++)\ \{}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j=0;j<colunas;j++)\ \{}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%.2f\ +\ \%2.fi\(\backslash\)t"{}},\ matriz[i][j].real,\ matriz[i][j].imag);}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00509\ \ \ \ \ \}}
+\DoxyCodeLine{00510\ \}}
+
+\end{DoxyCode}
+\Hypertarget{matrizes_8c_a00662e0c8fdc694d2a37f7c6c541aa2c}\label{matrizes_8c_a00662e0c8fdc694d2a37f7c6c541aa2c} 
+\index{matrizes.c@{matrizes.c}!imprimirVetor@{imprimirVetor}}
+\index{imprimirVetor@{imprimirVetor}!matrizes.c@{matrizes.c}}
+\doxysubsubsection{\texorpdfstring{imprimirVetor()}{imprimirVetor()}}
+{\footnotesize\ttfamily void imprimir\+Vetor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}}]{vetor,  }\item[{int}]{linhas }\end{DoxyParamCaption})}
+
+
+
+FUNCAO IMPRIMIR VETOR. 
+
+Funcao para imprimir vetor criada pera automatizar a impressao de vetores, uma vez que precisariamos imprimir
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Complexo\texorpdfstring{$\ast$}{*}} & vetor, int linhas \\
+\hline
+\mbox{\texttt{ out}}  & {\em void} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00520\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00521\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<linhas;i++)\{}
+\DoxyCodeLine{00522\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%.2f\ +\ \%.2fi\(\backslash\)t"{}},\ vetor[i].real,vetor[i].imag);}
+\DoxyCodeLine{00523\ \ \ \ \ \}}
+\DoxyCodeLine{00524\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00525\ \}}
+
+\end{DoxyCode}
+\Hypertarget{matrizes_8c_adafcd065cf2f6e770ebdaeaba6be2d0b}\label{matrizes_8c_adafcd065cf2f6e770ebdaeaba6be2d0b} 
+\index{matrizes.c@{matrizes.c}!matrizConjugada@{matrizConjugada}}
+\index{matrizConjugada@{matrizConjugada}!matrizes.c@{matrizes.c}}
+\doxysubsubsection{\texorpdfstring{matrizConjugada()}{matrizConjugada()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} matriz\+Conjugada (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{matriz,  }\item[{int}]{linhas,  }\item[{int}]{colunas }\end{DoxyParamCaption})}
+
+
+
+FUNCAO CONJUGADA. 
+
+Aqui esta a funcao conjugada que recebe como parametro de entradas uma \"{}variavel\"{} do tipo complexo, e duas do tipo inteiro e e tem retorno do tipo complexo
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}} & matriz, int linhas, int colunas \\
+\hline
+\mbox{\texttt{ out}}  & {\em Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}} & conjugada \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00636\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00637\ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}**\ conjugada\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}**)malloc(linhas\ *\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}));}
+\DoxyCodeLine{00638\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ linhas;\ i++)\ \{}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ conjugada[i]\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}*)malloc(colunas\ *\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}));}
+\DoxyCodeLine{00640\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ colunas;\ j++)\ \{}
+\DoxyCodeLine{00641\ \ \ \ \ \ \ \ \ \ \ \ \ conjugada[i][j].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ matriz[i][j].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}};}
+\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \ \ \ \ conjugada[i][j].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ -\/matriz[i][j].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}};}
+\DoxyCodeLine{00643\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00644\ \ \ \ \ \}}
+\DoxyCodeLine{00645\ \ \ \ \ \textcolor{keywordflow}{return}\ conjugada;}
+\DoxyCodeLine{00646\ \}}
+
+\end{DoxyCode}
+\Hypertarget{matrizes_8c_a8e7a9bd74290a2af7844255c4563a8ff}\label{matrizes_8c_a8e7a9bd74290a2af7844255c4563a8ff} 
+\index{matrizes.c@{matrizes.c}!matrizHermitiana@{matrizHermitiana}}
+\index{matrizHermitiana@{matrizHermitiana}!matrizes.c@{matrizes.c}}
+\doxysubsubsection{\texorpdfstring{matrizHermitiana()}{matrizHermitiana()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} matriz\+Hermitiana (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{matriz,  }\item[{int}]{linhas,  }\item[{int}]{colunas }\end{DoxyParamCaption})}
+
+
+
+FUNCAO HERMITIANA. 
+
+Aqui esta a funcao hermitiana que recebe como parametro de entradas uma \"{}variavel\"{} do tipo complexo, e duas do tipo inteiro e e tem retorno do tipo complexo
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}} & matriz, int linhas, int colunas \\
+\hline
+\mbox{\texttt{ out}}  & {\em Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}} & hermitiana \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00614\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00615\ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}**\ hermitiana\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}**)malloc(linhas\ *\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}));}
+\DoxyCodeLine{00616\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ linhas;\ i++)\ \{}
+\DoxyCodeLine{00617\ \ \ \ \ \ \ \ \ hermitiana[i]\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}*)malloc(colunas\ *\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}));}
+\DoxyCodeLine{00618\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ colunas;\ j++)\ \{}
+\DoxyCodeLine{00619\ \ \ \ \ \ \ \ \ \ \ \ \ hermitiana[i][j].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ matriz[j][i].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}};}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ \ \ \ \ hermitiana[i][j].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ -\/matriz[j][i].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}};}
+\DoxyCodeLine{00621\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00622\ \ \ \ \ \}}
+\DoxyCodeLine{00623\ }
+\DoxyCodeLine{00624\ \ \ \ \ \textcolor{keywordflow}{return}\ hermitiana;}
+\DoxyCodeLine{00625\ \}}
+
+\end{DoxyCode}
+\Hypertarget{matrizes_8c_a5806896d911ce5c38b96d4120cc98317}\label{matrizes_8c_a5806896d911ce5c38b96d4120cc98317} 
+\index{matrizes.c@{matrizes.c}!matrizTransposta@{matrizTransposta}}
+\index{matrizTransposta@{matrizTransposta}!matrizes.c@{matrizes.c}}
+\doxysubsubsection{\texorpdfstring{matrizTransposta()}{matrizTransposta()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} matriz\+Transposta (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{matriz,  }\item[{int}]{linhas,  }\item[{int}]{colunas }\end{DoxyParamCaption})}
+
+
+
+FUNCAO TRANSPOSTA. 
+
+Aqui esta a funcao transposta que recebe como parametro de entradas uma \"{}variavel\"{} do tipo complexo, e duas do tipo inteiro e e tem retorno do tipo complexo
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}} & matriz, int linhas, int colunas \\
+\hline
+\mbox{\texttt{ out}}  & {\em Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}} & transposta \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00593\ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}**\ transposta\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}**)malloc(colunas*\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}*));}
+\DoxyCodeLine{00594\ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<colunas;i++)\{}
+\DoxyCodeLine{00595\ \ \ \ \ \ \ \ \ transposta[i]=(\mbox{\hyperlink{struct_complexo}{Complexo}}*)malloc(linhas*\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}));}
+\DoxyCodeLine{00596\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j=0;j<linhas;j++)\{}
+\DoxyCodeLine{00597\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transposta[i][j].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ matriz[j][i].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}};}
+\DoxyCodeLine{00598\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ transposta[i][j].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ matriz[j][i].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}};}
+\DoxyCodeLine{00599\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00600\ \ \ \ \ \}}
+\DoxyCodeLine{00601\ \ \ \ \ \textcolor{keywordflow}{return}\ transposta;}
+\DoxyCodeLine{00602\ \}}
+
+\end{DoxyCode}
+\Hypertarget{matrizes_8c_acbf5b5933a25aba75484ede005954230}\label{matrizes_8c_acbf5b5933a25aba75484ede005954230} 
+\index{matrizes.c@{matrizes.c}!produtoEscalar@{produtoEscalar}}
+\index{produtoEscalar@{produtoEscalar}!matrizes.c@{matrizes.c}}
+\doxysubsubsection{\texorpdfstring{produtoEscalar()}{produtoEscalar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_complexo}{Complexo}} produto\+Escalar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}}]{v1,  }\item[{\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}}]{v2,  }\item[{int}]{tamanho }\end{DoxyParamCaption})}
+
+
+
+FUNCAO PRODUTO\+\_\+\+ESCALAR. 
+
+Aqui esta a funcao produto escalar que recebe como parametro de entradas duas \"{}variaveis\"{} do tipo complexo, uma do tipo inteiro e e tem retorno do tipo complexo
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Complexo\texorpdfstring{$\ast$}{*}} & v1, Complexo\texorpdfstring{$\ast$}{*} v2, int tamanho \\
+\hline
+\mbox{\texttt{ out}}  & {\em \doxylink{struct_complexo}{Complexo}} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00571\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00572\ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}\ vetoresultado;}
+\DoxyCodeLine{00573\ \ \ \ \ vetoresultado.\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 0;}
+\DoxyCodeLine{00574\ \ \ \ \ vetoresultado.\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 0;}
+\DoxyCodeLine{00575\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<tamanho;\ i++)\{}
+\DoxyCodeLine{00576\ \ \ \ \ \ \ \ \ \ \ \ \ vetoresultado.\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ +=\ v1[i].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ *\ v2[i].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ -\/\ v1[i].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ *\ v2[i].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}};}
+\DoxyCodeLine{00577\ \ \ \ \ \ \ \ \ \ \ \ \ vetoresultado.\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ +=\ v1[i].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ *\ v2[i].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ -\/\ v1[i].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ *\ v2[i].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}};}
+\DoxyCodeLine{00578\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00579\ \ \ \ \ \textcolor{keywordflow}{return}\ vetoresultado;}
+\DoxyCodeLine{00580\ \}}
+
+\end{DoxyCode}
+\Hypertarget{matrizes_8c_a85dd71245c7be6c193de822a53e46f21}\label{matrizes_8c_a85dd71245c7be6c193de822a53e46f21} 
+\index{matrizes.c@{matrizes.c}!produtoMatricial@{produtoMatricial}}
+\index{produtoMatricial@{produtoMatricial}!matrizes.c@{matrizes.c}}
+\doxysubsubsection{\texorpdfstring{produtoMatricial()}{produtoMatricial()}}
+{\footnotesize\ttfamily void produto\+Matricial (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{mat1,  }\item[{\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{mat2,  }\item[{\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{resultado,  }\item[{int}]{linhas1,  }\item[{int}]{colunas1,  }\item[{int}]{colunas2 }\end{DoxyParamCaption})}
+
+
+
+FUNCAO PRODUT\+\_\+\+MATRICIAL. 
+
+Aqui esta a funcao produto matricial que recebe como parametro de entradas tres \"{}variavel\"{} do tipo complexo e tres do tipo inteiro e e tem retorno do tipo vazio
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}} & mat1, Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} mat2, Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} resultado, int linhas1, int colunas1, int colunas2 \\
+\hline
+\mbox{\texttt{ out}}  & {\em void} & produto\+Matricial \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00657\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00658\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ linhas1;\ i++)\ \{}
+\DoxyCodeLine{00659\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ colunas2;\ j++)\ \{}
+\DoxyCodeLine{00660\ \ \ \ \ \ \ \ \ \ \ \ \ resultado[i][j].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 0;}
+\DoxyCodeLine{00661\ \ \ \ \ \ \ \ \ \ \ \ \ resultado[i][j].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 0;}
+\DoxyCodeLine{00662\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ k\ =\ 0;\ k\ <\ colunas1;\ k++)\ \{}
+\DoxyCodeLine{00663\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultado[i][j].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ +=\ (mat1[i][k].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ *\ mat2[k][j].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}})\ -\/\ (mat1[i][k].imag\ *\ mat2[k][j].imag);}
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ resultado[i][j].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ +=\ (mat1[i][k].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ *\ mat2[k][j].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}})\ +\ (mat1[i][k].imag\ *\ mat2[k][j].real);}
+\DoxyCodeLine{00665\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00666\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00667\ \ \ \ \ \}}
+\DoxyCodeLine{00668\ }
+\DoxyCodeLine{00669\ \}}
+
+\end{DoxyCode}
+\Hypertarget{matrizes_8c_a975230634fbf9e092e99b0ff08e718e7}\label{matrizes_8c_a975230634fbf9e092e99b0ff08e718e7} 
+\index{matrizes.c@{matrizes.c}!somaMatriz@{somaMatriz}}
+\index{somaMatriz@{somaMatriz}!matrizes.c@{matrizes.c}}
+\doxysubsubsection{\texorpdfstring{somaMatriz()}{somaMatriz()}}
+{\footnotesize\ttfamily void soma\+Matriz (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{m1,  }\item[{\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{m2,  }\item[{\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{resultado\+Soma }\end{DoxyParamCaption})}
+
+
+
+FUNCAO SOMA. 
+
+Aqui esta a funcao soma que recebe como parametro de entradas, tres \"{}variaveis\"{} do tipo complexo, e tem retorno do tipo void
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}} & m1, Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} m2, Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} resultado\+Soma \\
+\hline
+\mbox{\texttt{ out}}  & {\em void} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00538\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ linhas=0;linhas<3;\ linhas++)\ \{}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ colunas\ =\ 0;\ colunas<\ 3;colunas++)\ \{}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ \ \ \ \ resultadoSoma[linhas][colunas].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ m1[linhas][colunas].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ +\ m2[linhas][colunas].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}};}
+\DoxyCodeLine{00541\ \ \ \ \ \ \ \ \ \ \ \ \ resultadoSoma[linhas][colunas].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ m1[linhas][colunas].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ +\ m2[linhas][colunas].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}};}
+\DoxyCodeLine{00542\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00543\ \ \ \ \ \}}
+\DoxyCodeLine{00544\ \}}
+
+\end{DoxyCode}
+\Hypertarget{matrizes_8c_a13074e6c4a62f20f205c8b5a2439d678}\label{matrizes_8c_a13074e6c4a62f20f205c8b5a2439d678} 
+\index{matrizes.c@{matrizes.c}!subtracaoMatriz@{subtracaoMatriz}}
+\index{subtracaoMatriz@{subtracaoMatriz}!matrizes.c@{matrizes.c}}
+\doxysubsubsection{\texorpdfstring{subtracaoMatriz()}{subtracaoMatriz()}}
+{\footnotesize\ttfamily void subtracao\+Matriz (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{m1,  }\item[{\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{m2,  }\item[{\mbox{\hyperlink{struct_complexo}{Complexo}} \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{resultado\+Sub }\end{DoxyParamCaption})}
+
+
+
+FUNCAO SUBTRACAO. 
+
+Aqui esta a funcao subtracao que recebe como parametro de entradas, tres \"{}variaveis\"{} do tipo complexo, e tem retorno do tipo void
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}} & m1, Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} m2, Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} resultado\+Sub \\
+\hline
+\mbox{\texttt{ out}}  & {\em void} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00554\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00555\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ linhas=0;linhas<3;\ linhas++)\ \{}
+\DoxyCodeLine{00556\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ colunas\ =\ 0;\ colunas<\ 3;colunas++)\ \{}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ \ \ \ \ resultadoSub[linhas][colunas].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ m1[linhas][colunas].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ -\/\ m2[linhas][colunas].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}};}
+\DoxyCodeLine{00558\ \ \ \ \ \ \ \ \ \ \ \ \ resultadoSub[linhas][colunas].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ m1[linhas][colunas].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ -\/\ m2[linhas][colunas].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}};}
+\DoxyCodeLine{00559\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00560\ \ \ \ \ \}}
+\DoxyCodeLine{00561\ \}}
+
+\end{DoxyCode}
+\Hypertarget{matrizes_8c_a3aca1df60fb0befea07d8b5d7badd7ff}\label{matrizes_8c_a3aca1df60fb0befea07d8b5d7badd7ff} 
+\index{matrizes.c@{matrizes.c}!testeTodos@{testeTodos}}
+\index{testeTodos@{testeTodos}!matrizes.c@{matrizes.c}}
+\doxysubsubsection{\texorpdfstring{testeTodos()}{testeTodos()}}
+{\footnotesize\ttfamily void teste\+Todos (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Funcao teste todos\+: faz o teste de todas as funcoes implementadas 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em void} & \\
+\hline
+\mbox{\texttt{ out}}  & {\em void} & \\
+\hline
+\end{DoxyParams}
+TESTE 1 MATRIZ SOMA E SUBTRACAO
+
+ALOCACAO DE MEMORIA
+
+Iniciando o teste da matriz soma e subtracao, alocando memoria e declarando valores que serao usados para ambos os testes.
+
+Aqui sao declaradas duas variaveis que pode ser vista do porto o meu teste\+Todos e usadas por todas as funcoes, se necessario
+
+Os valores foram declarados manualmente e a alocacao de memoria tambem foi feita manual
+
+ATRIBUINDO VALORES PARA O TESTE 1
+
+TESTE 1 MATRIZ SOMA
+
+Aqui chamamos as funcoes necessarias para serem feitos os testes e para que o resultado seja impresso no terminal 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em void} & soma\+Matriz(m1,m2,resultado\+Soma) \\
+\hline
+\mbox{\texttt{ out}}  & {\em void} & imprimir\+Matriz(resultado\+Soma, linhas, colunas)\\
+\hline
+\end{DoxyParams}
+TESTE 1 MATRIZ SUBTRACAO
+
+Aqui chamamos as funcoes necessarias para serem feitos os testes e para que o resultado seja impresso no terminal
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em void} & soma\+Matriz(m1,m2,resultado\+Sub) \\
+\hline
+\mbox{\texttt{ out}}  & {\em void} & imprimir\+Matriz(resultado\+Sub, linhas, colunas)\\
+\hline
+\end{DoxyParams}
+ALOCANDO MEMORIA TESTE 2
+
+Os valores foram declarados manualmente e a alocacao de memoria tambem foi feita manual
+
+ATRIBUINDO VALORES PARA O TESTE 2
+
+TESTE 2 MATRIZ SOMA
+
+Aqui chamamos as funcoes necessarias para serem feitos os testes e para que o resultado seja impresso no terminal
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em void} & soma\+Matriz(m1,m2,resultado\+Soma) \\
+\hline
+\mbox{\texttt{ out}}  & {\em void} & imprimir\+Matriz(resultado\+Soma, linhas, colunas)\\
+\hline
+\end{DoxyParams}
+TESTE 2 MATRIZ SUBTRACAO
+
+Aqui chamamos as funcoes necessarias para serem feitos os testes e para que o resultado seja impresso no terminal
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em void} & soma\+Matriz(m1,m2,resultado\+Sub) \\
+\hline
+\mbox{\texttt{ out}}  & {\em void} & imprimir\+Matriz(resultado\+Sub, linhas, colunas)\\
+\hline
+\end{DoxyParams}
+TESTE PRODUTO\+\_\+\+ESCALAR
+
+ALOCACAO DE MEMORIA PRODUTO ESCALAR
+
+Os valores foram declarados manualmente e a alocacao de memoria tambem foi feita manual
+
+Aqui chamamos as funcoes necessarias para serem feitos os testes e para que o resultado seja impresso no terminal
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em void} & \doxylink{struct_complexo}{Complexo} vetoresultado \\
+\hline
+\mbox{\texttt{ out}}  & {\em void} & produto\+Escalar(v1,v2,3)\\
+\hline
+\end{DoxyParams}
+Aqui chamamos as funcoes necessarias para serem feitos os testes e para que o resultado seja impresso no terminal
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em void} & \doxylink{struct_complexo}{Complexo} vetoresultado \\
+\hline
+\mbox{\texttt{ out}}  & {\em void} & produto\+Escalar(v1,v2,3)\\
+\hline
+\end{DoxyParams}
+TESTE PRODUTO\+\_\+\+MATRICIAL
+
+ALOCACAO DE MEMORIA PRODUTO MATRICIAL
+
+Os valores foram declarados manualmente e a alocacao de memoria tambem foi feita manual, porem estuda-\/se a possibilidade de criar funcoes para gerar valores aleatorios e alocar a memoria automatizando ainda mais o referente codigo
+
+ATRIBUINDO VALORES PARA O TESTE DO PRODUTO\+\_\+\+MATRICIAL
+
+Aqui chamamos as funcoes necessarias para serem feitos os testes e para que o resultado seja impresso no terminal
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}} & produto\+Matricial(matriz1, matriz2, resultado\+Produto, linhas, colunas, colunas) \\
+\hline
+\mbox{\texttt{ out}}  & {\em Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}} & imprimir\+Matriz(resultado\+Produto, linhas, colunas)\\
+\hline
+\end{DoxyParams}
+TESTE TRANSPOSTA
+
+ALOCACAO DE MEMORIA TRANSPOSTA
+
+Os valores foram declarados manualmente e a alocacao de memoria tambem foi feita manual, porem estuda-\/se a possibilidade de criar funcoes para gerar valores aleatorios e alocar a memoria automatizando ainda mais o referente codigo
+
+ATRIBUINDO VALORES PARA O TESTE 1 DA TRANSPOSTA
+
+ATRIBUINDO VALORES PARA O TESTE 2 DA TRANSPOSTA
+
+Aqui chamamos as funcoes necessarias para serem feitos os testes e para que o resultado seja impresso no terminal
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}} & matriz = matriz\+Transposta(matriz, linhas, colunas) \\
+\hline
+\mbox{\texttt{ out}}  & {\em Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}} & imprimir\+Matriz(matriz, linhas, colunas)\\
+\hline
+\end{DoxyParams}
+ALOCACAO DE MEMORIA MATRIZ CONJUGADA
+
+ATRIBUICAO DE VALORES CONJUGADA
+
+Os valores foram declarados manualmente e a alocacao de memoria tambem foi feita manual, porem estuda-\/se a possibilidade de criar funcoes para gerar valores aleatorios e alocar a memoria automatizando ainda mais o referente codigo
+
+Aqui chamamos as funcoes necessarias para serem feitos os testes e para que o resultado seja impresso no terminal
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}} & Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*} matriz\+Conjugada\+Result \\
+\hline
+\mbox{\texttt{ out}}  & {\em Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}} & matriz\+Conjugada(conjugada, linhas, colunas)\\
+\hline
+\end{DoxyParams}
+TESTE FUNCAO HERMITIANA
+
+ATRIBUINDO VALORES PARA TESTE HERMITIANA
+
+Os valores foram declarados manualmente e a alocacao de memoria tambem foi feita manual, porem estuda-\/se a possibilidade de criar funcoes para gerar valores aleatorios e alocar a memoria automatizando ainda mais o referente codigo
+
+Aqui chamamos as funcoes necessarias para serem feitos os testes e para que o resultado seja impresso no terminal
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}} & matriz\+Hermitiana\+Result \\
+\hline
+\mbox{\texttt{ out}}  & {\em Complexo\texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}} & matriz\+Hermitiana(hermitiana, linhas, colunas)\\
+\hline
+\end{DoxyParams}
+Aqui estao todas os lacos para liberar memoria das matrizes, como soma, subtracao, transposta, etc.. assim como as demais funcoes que usaram alocacao de memoria dinamica.
+
+LIBERAR MEMORIA SOMA E SUBTRACAO
+
+LIBERAR MEMORIA PRODUTO\+\_\+\+ESCALAR
+
+LIBERAR MEMORIA TRANSPOSTA
+
+LIBERAR MEMORIA HERMITIANA
+
+LIBERAR MEMORIA CONJUGADA
+
+LIBERAR MEMORIA PRODUTO\+\_\+\+MATRICIAL
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00014\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ linhas\ =\ 3;}
+\DoxyCodeLine{00021\ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ colunas\ =3;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}**\ m1\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}**)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}*)\ *\ linhas);}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}**\ m2\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}**)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}*)\ *\ linhas);}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}**\ resultadoSoma\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}**)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}*)\ *\ linhas);}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}**\ resultadoSub\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}**)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}*)\ *\ linhas);}
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<linhas;i++)\{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \ \ \ \ m1[i]\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}})\ *\ colunas);}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \ \ \ \ m2[i]\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}})\ *\ colunas);}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ resultadoSoma[i]\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}})\ *\ colunas);}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \ \ \ \ resultadoSub[i]\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}})\ *\ colunas);}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ m1[0][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ +4;\ m1[0][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ +4;}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ m1[0][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 3;\ \ m1[0][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 4;}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ m1[0][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 2;\ \ m1[0][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 6;}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ m2[0][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ -\/5;\ m2[0][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 5;}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ m2[0][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 3;\ \ m2[0][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 4;}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ m2[0][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 1;\ \ m2[0][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 2;}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ m1[1][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 1;\ \ m1[1][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 2;}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ m1[1][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 3;\ \ m1[1][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 4;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ m1[1][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 8;\ m1[1][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 6;}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ m2[1][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 2;\ m2[1][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 3;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ m2[1][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 4;\ m2[1][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 5;}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ m2[1][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 6;\ m2[1][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 7;}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ m1[2][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 7;\ m1[2][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 18;}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ m1[2][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 9;\ m1[2][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 10;}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ m1[2][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 11;\ m1[2][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 12;}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ m2[2][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 8;\ m2[2][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 9;}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ m2[2][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 10;\ m2[2][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 11;}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ m2[2][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 12;\ m2[2][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 13;}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}======TESTE\ 1\ DA\ OPERACAO\ SOMA======\(\backslash\)n"{}});}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Operando\ A:\ \(\backslash\)n"{}});}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimirMatriz}}(m1,\ linhas,\ colunas);}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Operando\ B:\ \(\backslash\)n"{}});}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimirMatriz}}(m2,\ linhas,\ colunas);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Resultado:\ \(\backslash\)n"{}});}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_a975230634fbf9e092e99b0ff08e718e7}{somaMatriz}}(m1,\ m2,\ resultadoSoma);}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimirMatriz}}(resultadoSoma,\ linhas,\ colunas);}
+\DoxyCodeLine{00078\ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}======TESTE\ 1\ DA\ OPERACAO\ SUBTRACAO======\(\backslash\)n"{}});}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Operando\ A:\ \(\backslash\)n"{}});}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimirMatriz}}(m1,\ linhas,\ colunas);}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Operando\ B:\ \(\backslash\)n"{}});}
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimirMatriz}}(m2,\ linhas,\ colunas);}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Resultado\(\backslash\)n"{}});}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_a13074e6c4a62f20f205c8b5a2439d678}{subtracaoMatriz}}(m1,\ m2,\ resultadoSub);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimirMatriz}}(resultadoSub,\ linhas,\ colunas);}
+\DoxyCodeLine{00095\ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}**\ ma1\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}**)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}*)\ *\ linhas);}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}**\ ma2\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}**)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}*)\ *\ linhas);}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}**\ resultadoSoma2\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}**)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}*)\ *\ linhas);}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}**\ resultadoSub2\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}**)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}*)\ *\ linhas);}
+\DoxyCodeLine{00101\ }
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<linhas;i++)\{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ ma1[i]\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}})\ *\ colunas);}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ ma2[i]\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}})\ *\ colunas);}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ resultadoSoma2[i]\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}})\ *\ colunas);}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ resultadoSub2[i]\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}})\ *\ colunas);}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00112\ \ \ \ \ \ \ \ \ ma1[0][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ +20;\ ma1[0][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ +7;}
+\DoxyCodeLine{00113\ \ \ \ \ \ \ \ \ ma1[0][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 9;\ \ \ ma1[0][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 4;}
+\DoxyCodeLine{00114\ \ \ \ \ \ \ \ \ ma1[0][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 6;\ \ \ ma1[0][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 33;}
+\DoxyCodeLine{00115\ \ \ \ \ \ \ \ \ ma2[0][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ -\/5;\ \ ma2[0][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 2;}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ ma2[0][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 3;\ \ \ ma2[0][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 70;}
+\DoxyCodeLine{00117\ \ \ \ \ \ \ \ \ ma2[0][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 1;\ \ \ ma2[0][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 2;}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ ma1[1][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 1;\ \ ma1[1][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 2;}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ ma1[1][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 86;\ ma1[1][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 8;}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ ma1[1][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 8;\ \ ma1[1][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 6;}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ ma2[1][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 2;\ \ ma2[1][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 3;}
+\DoxyCodeLine{00123\ \ \ \ \ \ \ \ \ ma2[1][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 9;\ \ ma2[1][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 5;}
+\DoxyCodeLine{00124\ \ \ \ \ \ \ \ \ ma2[1][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 7;\ \ ma2[1][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 7;}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ ma1[2][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 7;\ \ ma1[2][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 8;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ ma1[2][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 9;\ \ ma1[2][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 10;}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ ma1[2][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 11;\ ma1[2][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 22;}
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ ma2[2][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 8;\ \ ma2[2][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 9;}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ ma2[2][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 90;\ ma2[2][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 11;}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ ma2[2][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 87;\ ma2[2][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 13;}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}======TESTE\ 2\ DA\ OPERACAO\ SOMA======\(\backslash\)n"{}});}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Operando\ A:\ \(\backslash\)n"{}});}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimirMatriz}}(ma1,\ linhas,\ colunas);}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Operando\ B:\ \(\backslash\)n"{}});}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimirMatriz}}(ma2,\ linhas,\ colunas);}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Resultado:\ \(\backslash\)n"{}});}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_a975230634fbf9e092e99b0ff08e718e7}{somaMatriz}}(m1,\ m2,\ resultadoSoma);}
+\DoxyCodeLine{00148\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimirMatriz}}(resultadoSoma,\ linhas,\ colunas);}
+\DoxyCodeLine{00149\ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}======TESTE\ 2\ DA\ OPERACAO\ SUBTRACAO======\(\backslash\)n"{}});}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Operando\ A:\ \(\backslash\)n"{}});}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimirMatriz}}(m1,\ linhas,\ colunas);}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Operando\ B:\ \(\backslash\)n"{}});}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimirMatriz}}(m2,\ linhas,\ colunas);}
+\DoxyCodeLine{00163\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Resultado\(\backslash\)n"{}});}
+\DoxyCodeLine{00164\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_a13074e6c4a62f20f205c8b5a2439d678}{subtracaoMatriz}}(m1,\ m2,\ resultadoSub);}
+\DoxyCodeLine{00165\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimirMatriz}}(resultadoSub,\ linhas,\ colunas);}
+\DoxyCodeLine{00166\ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00170\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}*\ v1\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}*)malloc(3*\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}));}
+\DoxyCodeLine{00171\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}*\ v2\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}*)malloc(3*\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}));}
+\DoxyCodeLine{00172\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}*\ ve1\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}*)malloc(3*\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}));}
+\DoxyCodeLine{00173\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}*\ ve2\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}*)malloc(3*\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}));}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \ \ \ \ \ \ \ \ v1[0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 60;\ \ v1[0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 80;}
+\DoxyCodeLine{00178\ \ \ \ \ \ \ \ \ v1[1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 79;\ \ v1[1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 14;}
+\DoxyCodeLine{00179\ \ \ \ \ \ \ \ \ v1[2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 10;\ \ v1[2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 57;}
+\DoxyCodeLine{00180\ }
+\DoxyCodeLine{00181\ \ \ \ \ \ \ \ \ v2[0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 4;\ \ v2[0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 8;}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ v2[1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 1;\ \ v2[1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 14;}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ v2[2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 2;\ \ v2[2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 9;}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ ve1[0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 4;\ \ ve1[0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 8;}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ ve1[1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 3;\ \ ve1[1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 14;}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ ve1[2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 2;\ \ ve1[2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 4;}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \ \ \ \ \ \ \ \ ve2[0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 9;\ \ ve2[0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 8;}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ ve2[1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 7;\ \ ve2[1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 64;}
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ ve2[2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 01;\ ve2[2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 4;}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}======TESTE\ 1\ DA\ OPERACAO\ PRODUTO\_ESCALAR======"{}});}
+\DoxyCodeLine{00201\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nOperando\ A:\ \(\backslash\)n"{}});}
+\DoxyCodeLine{00202\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_a00662e0c8fdc694d2a37f7c6c541aa2c}{imprimirVetor}}(v1,\ linhas);}
+\DoxyCodeLine{00203\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Operando\ B:\ \(\backslash\)n"{}});}
+\DoxyCodeLine{00204\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_a00662e0c8fdc694d2a37f7c6c541aa2c}{imprimirVetor}}(v2,\ linhas);}
+\DoxyCodeLine{00205\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}\ vetoresultado\ =\ \mbox{\hyperlink{matrizes_8c_acbf5b5933a25aba75484ede005954230}{produtoEscalar}}(v1,v2,3);}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Resultado:\(\backslash\)n\%.2f\ +\ \%.2fi\ \(\backslash\)n"{}},\ vetoresultado.\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}},\ vetoresultado.\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}});}
+\DoxyCodeLine{00207\ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}======TESTE\ 2\ DA\ OPERACAO\ PRODUTO\_ESCALAR======\(\backslash\)n"{}});}
+\DoxyCodeLine{00217\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Operando\ A:\ \(\backslash\)n"{}});}
+\DoxyCodeLine{00218\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_a00662e0c8fdc694d2a37f7c6c541aa2c}{imprimirVetor}}(ve1,\ linhas);}
+\DoxyCodeLine{00219\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Operando\ B:\ \(\backslash\)n"{}});}
+\DoxyCodeLine{00220\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_a00662e0c8fdc694d2a37f7c6c541aa2c}{imprimirVetor}}(ve2,\ linhas);}
+\DoxyCodeLine{00221\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}\ vetorresultado\ =\ \mbox{\hyperlink{matrizes_8c_acbf5b5933a25aba75484ede005954230}{produtoEscalar}}(ve1,\ ve2,3);}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Resultado:\(\backslash\)n\%.2f\ +\ \%.2fi\ \(\backslash\)n"{}},\ vetorresultado.\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}},\ vetorresultado.\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}});}
+\DoxyCodeLine{00223\ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00224\ }
+\DoxyCodeLine{00226\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}======TESTE\ DA\ OPERACAO\ PRODUTO\_MATRICIAL======\(\backslash\)n"{}});}
+\DoxyCodeLine{00228\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}**\ matriz1\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}**)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}*)\ *\ linhas);}
+\DoxyCodeLine{00229\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}**\ matriz2\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}**)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}*)\ *\ linhas);}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}**\ resultadoProduto\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}**)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}*)\ *\ linhas);}
+\DoxyCodeLine{00231\ }
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ linhas;\ i++)\ \{}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ matriz1[i]\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}})\ *\ colunas);}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ matriz2[i]\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}})\ *\ colunas);}
+\DoxyCodeLine{00235\ \ \ \ \ \ \ \ \ resultadoProduto[i]\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}})\ *\ colunas);}
+\DoxyCodeLine{00236\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00237\ }
+\DoxyCodeLine{00241\ }
+\DoxyCodeLine{00242\ \ \ \ \ \ \ \ \ matriz1[0][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ +4;\ matriz1[0][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ +4;}
+\DoxyCodeLine{00243\ \ \ \ \ \ \ \ \ matriz1[0][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 3;\ \ matriz1[0][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 4;}
+\DoxyCodeLine{00244\ \ \ \ \ \ \ \ \ matriz1[0][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 2;\ \ matriz1[0][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 6;}
+\DoxyCodeLine{00245\ \ \ \ \ \ \ \ \ matriz2[0][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ -\/5;\ matriz2[0][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 5;}
+\DoxyCodeLine{00246\ \ \ \ \ \ \ \ \ matriz2[0][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 3;\ \ matriz2[0][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 4;}
+\DoxyCodeLine{00247\ \ \ \ \ \ \ \ \ matriz2[0][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 1;\ \ matriz2[0][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 2;}
+\DoxyCodeLine{00248\ }
+\DoxyCodeLine{00249\ \ \ \ \ \ \ \ \ matriz1[1][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 1;\ \ matriz1[1][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 2;}
+\DoxyCodeLine{00250\ \ \ \ \ \ \ \ \ matriz1[1][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 3;\ \ matriz1[1][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 4;}
+\DoxyCodeLine{00251\ \ \ \ \ \ \ \ \ matriz1[1][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 8;\ \ matriz1[1][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 6;}
+\DoxyCodeLine{00252\ }
+\DoxyCodeLine{00253\ \ \ \ \ \ \ \ \ matriz2[1][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 2;\ \ matriz2[1][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 3;}
+\DoxyCodeLine{00254\ \ \ \ \ \ \ \ \ matriz2[1][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 4;\ \ matriz2[1][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 5;}
+\DoxyCodeLine{00255\ \ \ \ \ \ \ \ \ matriz2[1][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 6;\ \ matriz2[1][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 7;}
+\DoxyCodeLine{00256\ }
+\DoxyCodeLine{00257\ \ \ \ \ \ \ \ \ matriz1[2][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 7;\ \ matriz1[2][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 18;}
+\DoxyCodeLine{00258\ \ \ \ \ \ \ \ \ matriz1[2][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 9;\ \ matriz1[2][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 10;}
+\DoxyCodeLine{00259\ \ \ \ \ \ \ \ \ matriz1[2][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 11;\ matriz1[2][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 12;}
+\DoxyCodeLine{00260\ \ \ \ \ \ \ \ \ matriz2[2][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 8;\ \ matriz2[2][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 9;}
+\DoxyCodeLine{00261\ \ \ \ \ \ \ \ \ matriz2[2][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 10;\ matriz2[2][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 11;}
+\DoxyCodeLine{00262\ \ \ \ \ \ \ \ \ matriz2[2][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 12;\ matriz2[2][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 13;}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00265\ }
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00272\ }
+\DoxyCodeLine{00273\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Operando\ A:\ \(\backslash\)n"{}});}
+\DoxyCodeLine{00274\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimirMatriz}}(matriz1,\ linhas,\ colunas);}
+\DoxyCodeLine{00275\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Operando\ B:\ \(\backslash\)n"{}});}
+\DoxyCodeLine{00276\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimirMatriz}}(matriz2,\ linhas,\ colunas);}
+\DoxyCodeLine{00277\ }
+\DoxyCodeLine{00278\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Resultado:\(\backslash\)n"{}});}
+\DoxyCodeLine{00279\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_a85dd71245c7be6c193de822a53e46f21}{produtoMatricial}}(matriz1,\ matriz2,\ resultadoProduto,\ linhas,\ colunas,\ colunas);}
+\DoxyCodeLine{00280\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimirMatriz}}(resultadoProduto,\ linhas,\ colunas);}
+\DoxyCodeLine{00281\ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00284\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}**\ matriz\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}**)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}*)*linhas);}
+\DoxyCodeLine{00285\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;\ i<linhas;i++)\{}
+\DoxyCodeLine{00286\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matriz[i]=(\mbox{\hyperlink{struct_complexo}{Complexo}}*)malloc(colunas*\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}));}
+\DoxyCodeLine{00287\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ j=0;\ j<colunas;j++)\{}
+\DoxyCodeLine{00288\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matriz[i][j].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ i+j;}
+\DoxyCodeLine{00289\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ matriz[i][j].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ i-\/j;}
+\DoxyCodeLine{00290\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00291\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00296\ }
+\DoxyCodeLine{00298\ \ \ \ \ \ \ \ \ matriz[0][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ -\/3;\ matriz[0][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ +4;}
+\DoxyCodeLine{00299\ \ \ \ \ \ \ \ \ matriz[0][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 3;\ \ matriz[0][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 4;}
+\DoxyCodeLine{00300\ \ \ \ \ \ \ \ \ matriz[0][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ -\/2;\ matriz[0][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ -\/6;}
+\DoxyCodeLine{00301\ \ \ \ \ \ \ \ \ matriz[1][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ +1;\ matriz[1][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 2;}
+\DoxyCodeLine{00302\ \ \ \ \ \ \ \ \ matriz[1][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ +3;\ matriz[1][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 4;}
+\DoxyCodeLine{00303\ \ \ \ \ \ \ \ \ matriz[1][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 5;\ \ matriz[1][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 6;}
+\DoxyCodeLine{00304\ \ \ \ \ \ \ \ \ matriz[2][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 7;\ \ matriz[2][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 8;}
+\DoxyCodeLine{00305\ \ \ \ \ \ \ \ \ matriz[2][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 9;\ \ matriz[2][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 10;}
+\DoxyCodeLine{00306\ \ \ \ \ \ \ \ \ matriz[2][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 11;\ matriz[2][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 12;}
+\DoxyCodeLine{00307\ }
+\DoxyCodeLine{00309\ \ \ \ \ \ \ \ \ matriz[0][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ +0;\ matriz[0][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ +4;}
+\DoxyCodeLine{00310\ \ \ \ \ \ \ \ \ matriz[0][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 6;\ \ matriz[0][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 4;}
+\DoxyCodeLine{00311\ \ \ \ \ \ \ \ \ matriz[0][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 18;\ matriz[0][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 9;}
+\DoxyCodeLine{00312\ \ \ \ \ \ \ \ \ matriz[1][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ +10;matriz[1][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 22;}
+\DoxyCodeLine{00313\ \ \ \ \ \ \ \ \ matriz[1][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 03;\ matriz[1][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 47;}
+\DoxyCodeLine{00314\ \ \ \ \ \ \ \ \ matriz[1][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ -\/56;matriz[1][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 96;}
+\DoxyCodeLine{00315\ \ \ \ \ \ \ \ \ matriz[2][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 80;\ matriz[2][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 8;}
+\DoxyCodeLine{00316\ \ \ \ \ \ \ \ \ matriz[2][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 90;\ matriz[2][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 10;}
+\DoxyCodeLine{00317\ \ \ \ \ \ \ \ \ matriz[2][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 11;\ matriz[2][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 12;}
+\DoxyCodeLine{00318\ }
+\DoxyCodeLine{00319\ }
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00327\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}======TESTE\ DA\ OPERACAO\ 1\ TRANSPOSTA======\(\backslash\)n"{}});}
+\DoxyCodeLine{00328\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Matriz\ Original:\ \(\backslash\)n"{}});}
+\DoxyCodeLine{00329\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimirMatriz}}(matriz,\ linhas,\ colunas);}
+\DoxyCodeLine{00330\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Matriz\ Transposta:\ \(\backslash\)n"{}});}
+\DoxyCodeLine{00331\ \ \ \ \ \ \ \ \ matriz\ =\ \mbox{\hyperlink{matrizes_8c_a5806896d911ce5c38b96d4120cc98317}{matrizTransposta}}(matriz,\ linhas,\ colunas);}
+\DoxyCodeLine{00332\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimirMatriz}}(matriz,\ linhas,\ colunas);}
+\DoxyCodeLine{00333\ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00334\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}======TESTE\ DA\ OPERACAO\ 2\ TRANSPOSTA======\(\backslash\)n"{}});}
+\DoxyCodeLine{00335\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Matriz\ Original:\ \(\backslash\)n"{}});}
+\DoxyCodeLine{00336\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimirMatriz}}(matriz,\ linhas,\ colunas);}
+\DoxyCodeLine{00337\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Matriz\ Transposta:\ \(\backslash\)n"{}});}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ matriz\ =\ \mbox{\hyperlink{matrizes_8c_a5806896d911ce5c38b96d4120cc98317}{matrizTransposta}}(matriz,\ linhas,\ colunas);}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimirMatriz}}(matriz,\ linhas,\ colunas);}
+\DoxyCodeLine{00340\ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00341\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}======TESTE\ DA\ OPERACAO\_CONJUGADA======\(\backslash\)n"{}});}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00344\ }
+\DoxyCodeLine{00345\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}**\ conjugada\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}**)malloc(linhas\ *\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}));}
+\DoxyCodeLine{00346\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ linhas;\ i++)\ \{}
+\DoxyCodeLine{00347\ \ \ \ \ \ \ \ \ conjugada[i]\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}*)malloc(colunas\ *\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}));}
+\DoxyCodeLine{00348\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ colunas;\ j++)\ \{}
+\DoxyCodeLine{00349\ \ \ \ \ \ \ \ \ \ \ \ \ conjugada[i][j].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ i\ +\ j;}
+\DoxyCodeLine{00350\ \ \ \ \ \ \ \ \ \ \ \ \ conjugada[i][j].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ i\ -\/\ j;}
+\DoxyCodeLine{00351\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00352\ \ \ \ \ \}}
+\DoxyCodeLine{00353\ }
+\DoxyCodeLine{00355\ }
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00360\ \ \ \ \ \ \ \ \ conjugada[0][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 3;\ \ \ \ conjugada[0][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ -\/2;}
+\DoxyCodeLine{00361\ \ \ \ \ \ \ \ \ conjugada[0][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ -\/5;\ \ \ conjugada[0][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 3;}
+\DoxyCodeLine{00362\ \ \ \ \ \ \ \ \ conjugada[0][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 2;\ \ \ \ conjugada[0][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 4;}
+\DoxyCodeLine{00363\ \ \ \ \ \ \ \ \ conjugada[1][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 3;\ \ \ \ conjugada[1][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 3;}
+\DoxyCodeLine{00364\ \ \ \ \ \ \ \ \ conjugada[1][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ -\/4;\ \ \ conjugada[1][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 2;}
+\DoxyCodeLine{00365\ \ \ \ \ \ \ \ \ conjugada[1][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 6;\ \ \ \ conjugada[1][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 3;}
+\DoxyCodeLine{00366\ \ \ \ \ \ \ \ \ conjugada[2][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ -\/2;\ \ \ conjugada[2][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 7;}
+\DoxyCodeLine{00367\ \ \ \ \ \ \ \ \ conjugada[2][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ -\/3;\ \ \ conjugada[2][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ -\/8;}
+\DoxyCodeLine{00368\ \ \ \ \ \ \ \ \ conjugada[2][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 1;\ \ \ \ conjugada[2][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 9;}
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00372\ }
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Matriz\ original:\(\backslash\)n"{}});}
+\DoxyCodeLine{00378\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimirMatriz}}(conjugada,\ linhas,\ colunas);}
+\DoxyCodeLine{00379\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}**\ matrizConjugadaResult\ =\ \mbox{\hyperlink{matrizes_8c_adafcd065cf2f6e770ebdaeaba6be2d0b}{matrizConjugada}}(conjugada,\ linhas,\ colunas);}
+\DoxyCodeLine{00380\ }
+\DoxyCodeLine{00381\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nMatriz\ conjugada:\(\backslash\)n"{}});}
+\DoxyCodeLine{00382\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimirMatriz}}(matrizConjugadaResult,\ linhas,\ colunas);}
+\DoxyCodeLine{00383\ }
+\DoxyCodeLine{00385\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}======TESTE\ DA\ OPERACAO\_HERMITIANA======\(\backslash\)n"{}});}
+\DoxyCodeLine{00386\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}**\ hermitiana\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}**)malloc(linhas\ *\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}));}
+\DoxyCodeLine{00387\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ linhas;\ i++)\ \{}
+\DoxyCodeLine{00388\ \ \ \ \ \ \ \ \ \ \ \ \ hermitiana[i]\ =\ (\mbox{\hyperlink{struct_complexo}{Complexo}}*)malloc(colunas\ *\ \textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_complexo}{Complexo}}));}
+\DoxyCodeLine{00389\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ j\ =\ 0;\ j\ <\ colunas;\ j++)\ \{}
+\DoxyCodeLine{00390\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hermitiana[i][j].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ i\ +\ j;}
+\DoxyCodeLine{00391\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ hermitiana[i][j].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ i\ -\/\ j;}
+\DoxyCodeLine{00392\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00393\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00395\ }
+\DoxyCodeLine{00399\ }
+\DoxyCodeLine{00400\ \ \ \ \ \ \ \ \ hermitiana[0][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 2;\ \ \ \ hermitiana[0][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ -\/3;}
+\DoxyCodeLine{00401\ \ \ \ \ \ \ \ \ hermitiana[0][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ -\/5;\ \ \ hermitiana[0][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 6;}
+\DoxyCodeLine{00402\ \ \ \ \ \ \ \ \ hermitiana[0][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 7;\ \ \ \ hermitiana[0][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 4;}
+\DoxyCodeLine{00403\ \ \ \ \ \ \ \ \ hermitiana[1][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 21;\ \ \ hermitiana[1][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 7;}
+\DoxyCodeLine{00404\ \ \ \ \ \ \ \ \ hermitiana[1][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ -\/4;\ \ \ hermitiana[1][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 2;}
+\DoxyCodeLine{00405\ \ \ \ \ \ \ \ \ hermitiana[1][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ -\/5;\ \ \ hermitiana[1][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 9;}
+\DoxyCodeLine{00406\ \ \ \ \ \ \ \ \ hermitiana[2][0].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ -\/22;\ \ hermitiana[2][0].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 7;}
+\DoxyCodeLine{00407\ \ \ \ \ \ \ \ \ hermitiana[2][1].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ -\/3;\ \ \ hermitiana[2][1].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ -\/11;}
+\DoxyCodeLine{00408\ \ \ \ \ \ \ \ \ hermitiana[2][2].\mbox{\hyperlink{struct_complexo_a06ed4269b34924d748f2f77b17db7d21}{real}}\ =\ 13;\ \ \ hermitiana[2][2].\mbox{\hyperlink{struct_complexo_add94d585be4b8a725d3a4cd3fabb7f98}{imag}}\ =\ 9;}
+\DoxyCodeLine{00409\ }
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00413\ }
+\DoxyCodeLine{00417\ }
+\DoxyCodeLine{00418\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Matriz\ original:\(\backslash\)n"{}});}
+\DoxyCodeLine{00419\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimirMatriz}}(hermitiana,\ linhas,\ colunas);}
+\DoxyCodeLine{00420\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_complexo}{Complexo}}**\ matrizHermitianaResult\ =\ \mbox{\hyperlink{matrizes_8c_a8e7a9bd74290a2af7844255c4563a8ff}{matrizHermitiana}}(hermitiana,\ linhas,\ colunas);}
+\DoxyCodeLine{00421\ }
+\DoxyCodeLine{00422\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nMatriz\ hermitiana:\(\backslash\)n"{}});}
+\DoxyCodeLine{00423\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{matrizes_8c_ac0d7bad818f83e7c6cb3fc3f02a1de33}{imprimirMatriz}}(matrizHermitianaResult,\ linhas,\ colunas);}
+\DoxyCodeLine{00424\ }
+\DoxyCodeLine{00427\ }
+\DoxyCodeLine{00429\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<3;i++)\{}
+\DoxyCodeLine{00430\ \ \ \ \ \ \ \ \ free(m1[i]);}
+\DoxyCodeLine{00431\ \ \ \ \ \ \ \ \ free(m2[i]);}
+\DoxyCodeLine{00432\ \ \ \ \ \ \ \ \ free(resultadoSoma[i]);}
+\DoxyCodeLine{00433\ \ \ \ \ \ \ \ \ free(resultadoSub[i]);}
+\DoxyCodeLine{00434\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00435\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<3;i++)\{}
+\DoxyCodeLine{00436\ \ \ \ \ \ \ \ \ free(ma1[i]);}
+\DoxyCodeLine{00437\ \ \ \ \ \ \ \ \ free(ma2[i]);}
+\DoxyCodeLine{00438\ \ \ \ \ \ \ \ \ free(resultadoSoma2[i]);}
+\DoxyCodeLine{00439\ \ \ \ \ \ \ \ \ free(resultadoSub2[i]);}
+\DoxyCodeLine{00440\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00441\ }
+\DoxyCodeLine{00442\ \ \ \ \ \ \ \ \ free(m1);}
+\DoxyCodeLine{00443\ \ \ \ \ \ \ \ \ free(m2);}
+\DoxyCodeLine{00444\ \ \ \ \ \ \ \ \ free(resultadoSoma);}
+\DoxyCodeLine{00445\ \ \ \ \ \ \ \ \ free(resultadoSub);}
+\DoxyCodeLine{00446\ \ \ \ \ \ \ \ \ free(ma1);}
+\DoxyCodeLine{00447\ \ \ \ \ \ \ \ \ free(ma2);}
+\DoxyCodeLine{00448\ \ \ \ \ \ \ \ \ free(resultadoSoma2);}
+\DoxyCodeLine{00449\ \ \ \ \ \ \ \ \ free(resultadoSub2);}
+\DoxyCodeLine{00450\ }
+\DoxyCodeLine{00452\ \ \ \ \ \ \ \ \ free(v1);}
+\DoxyCodeLine{00453\ \ \ \ \ \ \ \ \ free(v2);}
+\DoxyCodeLine{00454\ \ \ \ \ \ \ \ \ free(ve1);}
+\DoxyCodeLine{00455\ \ \ \ \ \ \ \ \ free(ve2);}
+\DoxyCodeLine{00456\ }
+\DoxyCodeLine{00458\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<linhas;i++)\{}
+\DoxyCodeLine{00459\ \ \ \ \ \ \ \ \ \ \ \ \ free(matriz[i]);}
+\DoxyCodeLine{00460\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00461\ \ \ \ \ \ \ \ \ free(matriz);}
+\DoxyCodeLine{00462\ }
+\DoxyCodeLine{00464\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<linhas;i++)\{}
+\DoxyCodeLine{00465\ \ \ \ \ \ \ \ \ \ \ \ \ free\ (hermitiana[i]);}
+\DoxyCodeLine{00466\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00467\ \ \ \ \ \ \ \ \ free(hermitiana);}
+\DoxyCodeLine{00469\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int}\ i=0;i<linhas;i++)\{}
+\DoxyCodeLine{00470\ \ \ \ \ \ \ \ \ \ \ \ \ free\ (conjugada[i]);}
+\DoxyCodeLine{00471\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00472\ \ \ \ \ \ \ \ \ free(conjugada);}
+\DoxyCodeLine{00473\ }
+\DoxyCodeLine{00475\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ linhas;\ i++)\ \{}
+\DoxyCodeLine{00476\ \ \ \ \ \ \ \ \ \ \ \ \ free(matriz1[i]);}
+\DoxyCodeLine{00477\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00478\ \ \ \ \ \ \ \ \ free(matriz1);}
+\DoxyCodeLine{00479\ }
+\DoxyCodeLine{00480\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ colunas;\ i++)\ \{}
+\DoxyCodeLine{00481\ \ \ \ \ \ \ \ \ \ \ \ \ free(matriz2[i]);}
+\DoxyCodeLine{00482\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00483\ \ \ \ \ \ \ \ \ free(matriz2);}
+\DoxyCodeLine{00484\ }
+\DoxyCodeLine{00485\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ linhas;\ i++)\ \{}
+\DoxyCodeLine{00486\ \ \ \ \ \ \ \ \ \ \ \ \ free(resultadoProduto[i]);}
+\DoxyCodeLine{00487\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00488\ \ \ \ \ \ \ \ \ free(resultadoProduto);}
+\DoxyCodeLine{00489\ }
+\DoxyCodeLine{00490\ \}}
+
+\end{DoxyCode}

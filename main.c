@@ -1,6 +1,5 @@
 
 ///@file main.c
-///@mainpage
 
 #include <stdio.h>
 #include <stdlib.h>
