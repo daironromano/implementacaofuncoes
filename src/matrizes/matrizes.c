@@ -66,7 +66,7 @@ void testeTodos(){
         * @param[out] void imprimirMatriz(resultadoSoma, linhas, colunas)
         */
 
-        printf("======TESTE 1 DA OPERACAO SOMA======\n");
+        printf("\033[1;31m======================TESTE DA OPERACAO SOMA======================\033[0m\n");
         printf("Operando A: \n");
         imprimirMatriz(m1, linhas, colunas);
         printf("Operando B: \n");
@@ -75,7 +75,9 @@ void testeTodos(){
         printf("Resultado: \n");
         somaMatriz(m1, m2, resultadoSoma);
         imprimirMatriz(resultadoSoma, linhas, colunas);
+
 printf("\n");
+
         /// TESTE 1 MATRIZ SUBTRACAO
         /** Aqui chamamos as funcoes necessarias para serem feitos os testes
         e para que o resultado seja impresso no terminal**/
@@ -84,7 +86,7 @@ printf("\n");
            *@param[out] void imprimirMatriz(resultadoSub, linhas, colunas)
            */
 
-        printf("======TESTE 1 DA OPERACAO SUBTRACAO======\n");
+        printf("\033[1;31m====================TESTE DA OPERACAO SUBTRACAO===================\033[0m\n");
         printf("Operando A: \n");
         imprimirMatriz(m1, linhas, colunas);
         printf("Operando B: \n");
@@ -92,87 +94,15 @@ printf("\n");
         printf("Resultado\n");
         subtracaoMatriz(m1, m2, resultadoSub);
         imprimirMatriz(resultadoSub, linhas, colunas);
+
 printf("\n");
-        /// ALOCANDO MEMORIA TESTE 2
-        Complexo** ma1 = (Complexo**)malloc(sizeof(Complexo*) * linhas);
-        Complexo** ma2 = (Complexo**)malloc(sizeof(Complexo*) * linhas);
-        Complexo** resultadoSoma2 = (Complexo**)malloc(sizeof(Complexo*) * linhas);
-        Complexo** resultadoSub2 = (Complexo**)malloc(sizeof(Complexo*) * linhas);
-
-        for(int i=0;i<linhas;i++){
-            ma1[i] = (Complexo*)malloc(sizeof(Complexo) * colunas);
-            ma2[i] = (Complexo*)malloc(sizeof(Complexo) * colunas);
-            resultadoSoma2[i] = (Complexo*)malloc(sizeof(Complexo) * colunas);
-            resultadoSub2[i] = (Complexo*)malloc(sizeof(Complexo) * colunas);
-        }
-
-            /**Os valores foram declarados manualmente e a alocacao de memoria tambem foi feita manual **/
-
-        /// ATRIBUINDO VALORES PARA O TESTE 2
-        ma1[0][0].real = +20; ma1[0][0].imag = +7;
-        ma1[0][1].real = 9;   ma1[0][1].imag = 4;
-        ma1[0][2].real = 6;   ma1[0][2].imag = 33;
-        ma2[0][0].real = -5;  ma2[0][0].imag = 2;
-        ma2[0][1].real = 3;   ma2[0][1].imag = 70;
-        ma2[0][2].real = 1;   ma2[0][2].imag = 2;
-
-        ma1[1][0].real = 1;  ma1[1][0].imag = 2;
-        ma1[1][1].real = 86; ma1[1][1].imag = 8;
-        ma1[1][2].real = 8;  ma1[1][2].imag = 6;
-        ma2[1][0].real = 2;  ma2[1][0].imag = 3;
-        ma2[1][1].real = 9;  ma2[1][1].imag = 5;
-        ma2[1][2].real = 7;  ma2[1][2].imag = 7;
-
-        ma1[2][0].real = 7;  ma1[2][0].imag = 8;
-        ma1[2][1].real = 9;  ma1[2][1].imag = 10;
-        ma1[2][2].real = 11; ma1[2][2].imag = 22;
-        ma2[2][0].real = 8;  ma2[2][0].imag = 9;
-        ma2[2][1].real = 90; ma2[2][1].imag = 11;
-        ma2[2][2].real = 87; ma2[2][2].imag = 13;
-
-        /// TESTE 2 MATRIZ SOMA
-        /** Aqui chamamos as funcoes necessarias para serem feitos os testes
-        e para que o resultado seja impresso no terminal**/
-
-        /**@param[in] void somaMatriz(m1,m2,resultadoSoma)
-          *@param[out] void imprimirMatriz(resultadoSoma, linhas, colunas)
-          */
-        printf("======TESTE 2 DA OPERACAO SOMA======\n");
-        printf("Operando A: \n");
-        imprimirMatriz(ma1, linhas, colunas);
-        printf("Operando B: \n");
-        imprimirMatriz(ma2, linhas, colunas);
-
-        printf("Resultado: \n");
-        somaMatriz(m1, m2, resultadoSoma);
-        imprimirMatriz(resultadoSoma, linhas, colunas);
-printf("\n");
-        /// TESTE 2 MATRIZ SUBTRACAO
-        /** Aqui chamamos as funcoes necessarias para serem feitos os testes
-        e para que o resultado seja impresso no terminal**/
-
-        /**@param[in] void somaMatriz(m1,m2,resultadoSub)
-          *@param[out] void imprimirMatriz(resultadoSub, linhas, colunas)
-          */
-
-        printf("======TESTE 2 DA OPERACAO SUBTRACAO======\n");
-        printf("Operando A: \n");
-        imprimirMatriz(m1, linhas, colunas);
-        printf("Operando B: \n");
-        imprimirMatriz(m2, linhas, colunas);
-        printf("Resultado\n");
-        subtracaoMatriz(m1, m2, resultadoSub);
-        imprimirMatriz(resultadoSub, linhas, colunas);
-printf("\n");
-
+        
         /// TESTE PRODUTO_ESCALAR
             /// ALOCACAO DE MEMORIA PRODUTO ESCALAR
         Complexo* v1 = (Complexo*)malloc(3*sizeof(Complexo));
         Complexo* v2 = (Complexo*)malloc(3*sizeof(Complexo));
-        Complexo* ve1 = (Complexo*)malloc(3*sizeof(Complexo));
-        Complexo* ve2 = (Complexo*)malloc(3*sizeof(Complexo));
-
-            /**Os valores foram declarados manualmente e a alocacao de memoria tambem foi feita manual**/
+      
+        /**Os valores foram declarados manualmente e a alocacao de memoria tambem foi feita manual**/
 
         v1[0].real = 60;  v1[0].imag = 80;
         v1[1].real = 79;  v1[1].imag = 14;
@@ -182,14 +112,6 @@ printf("\n");
         v2[1].real = 1;  v2[1].imag = 14;
         v2[2].real = 2;  v2[2].imag = 9;
 
-        ve1[0].real = 4;  ve1[0].imag = 8;
-        ve1[1].real = 3;  ve1[1].imag = 14;
-        ve1[2].real = 2;  ve1[2].imag = 4;
-
-        ve2[0].real = 9;  ve2[0].imag = 8;
-        ve2[1].real = 7;  ve2[1].imag = 64;
-        ve2[2].real = 01; ve2[2].imag = 4;
-
         /** Aqui chamamos as funcoes necessarias para serem feitos os testes
         e para que o resultado seja impresso no terminal**/
 
@@ -197,33 +119,19 @@ printf("\n");
             *@param[out] void produtoEscalar(v1,v2,3)
             */
 
-        printf("======TESTE 1 DA OPERACAO PRODUTO_ESCALAR======");
+        printf("\033[1;31m================TESTE DA OPERACAO PRODUTO ESCALAR=================\033[0m");
         printf("\nOperando A: \n");
         imprimirVetor(v1, linhas);
         printf("Operando B: \n");
         imprimirVetor(v2, linhas);
         Complexo vetoresultado = produtoEscalar(v1,v2,3);
+       
         printf("Resultado:\n%.2f + %.2fi \n", vetoresultado.real, vetoresultado.imag);
+
 printf("\n");
-
-        /** Aqui chamamos as funcoes necessarias para serem feitos os testes
-        e para que o resultado seja impresso no terminal**/
-
-          /**@param[in] void Complexo vetoresultado
-            *@param[out] void produtoEscalar(v1,v2,3)
-            */
-
-        printf("======TESTE 2 DA OPERACAO PRODUTO_ESCALAR======\n");
-        printf("Operando A: \n");
-        imprimirVetor(ve1, linhas);
-        printf("Operando B: \n");
-        imprimirVetor(ve2, linhas);
-        Complexo vetorresultado = produtoEscalar(ve1, ve2,3);
-        printf("Resultado:\n%.2f + %.2fi \n", vetorresultado.real, vetorresultado.imag);
-printf("\n");
-
-        /// TESTE PRODUTO_MATRICIAL
-        printf("======TESTE DA OPERACAO PRODUTO_MATRICIAL======\n");
+      
+        /// TESTE PRODUTO MATRICIAL
+        printf("\033[1;31m===============TESTE DA OPERACAO PRODUTO MATRICIAL================\033[0m\n");
             /// ALOCACAO DE MEMORIA PRODUTO MATRICIAL
         Complexo** matriz1 = (Complexo**)malloc(sizeof(Complexo*) * linhas);
         Complexo** matriz2 = (Complexo**)malloc(sizeof(Complexo*) * linhas);
@@ -278,7 +186,9 @@ printf("\n");
         printf("Resultado:\n");
         produtoMatricial(matriz1, matriz2, resultadoProduto, linhas, colunas, colunas);
         imprimirMatriz(resultadoProduto, linhas, colunas);
+
 printf("\n");
+
         /// TESTE TRANSPOSTA
             /// ALOCACAO DE MEMORIA TRANSPOSTA
         Complexo** matriz = (Complexo**)malloc(sizeof(Complexo*)*linhas);
@@ -294,7 +204,7 @@ printf("\n");
         porem estuda-se a possibilidade de criar funcoes para gerar valores aleatorios e alocar a memoria
         automatizando ainda mais o referente codigo **/
 
-        /// ATRIBUINDO VALORES PARA O TESTE 1 DA TRANSPOSTA
+        /// ATRIBUINDO VALORES PARA O TESTE DA TRANSPOSTA
         matriz[0][0].real = -3; matriz[0][0].imag = +4;
         matriz[0][1].real = 3;  matriz[0][1].imag = 4;
         matriz[0][2].real = -2; matriz[0][2].imag = -6;
@@ -305,18 +215,6 @@ printf("\n");
         matriz[2][1].real = 9;  matriz[2][1].imag = 10;
         matriz[2][2].real = 11; matriz[2][2].imag = 12;
 
-        /// ATRIBUINDO VALORES PARA O TESTE 2 DA TRANSPOSTA
-        matriz[0][0].real = +0; matriz[0][0].imag = +4;
-        matriz[0][1].real = 6;  matriz[0][1].imag = 4;
-        matriz[0][2].real = 18; matriz[0][2].imag = 9;
-        matriz[1][0].real = +10;matriz[1][0].imag = 22;
-        matriz[1][1].real = 03; matriz[1][1].imag = 47;
-        matriz[1][2].real = -56;matriz[1][2].imag = 96;
-        matriz[2][0].real = 80; matriz[2][0].imag = 8;
-        matriz[2][1].real = 90; matriz[2][1].imag = 10;
-        matriz[2][2].real = 11; matriz[2][2].imag = 12;
-
-
         /** Aqui chamamos as funcoes necessarias para serem feitos os testes
         e para que o resultado seja impresso no terminal**/
 
@@ -324,24 +222,20 @@ printf("\n");
             *@param[out] Complexo** imprimirMatriz(matriz, linhas, colunas)
             */
 
-        printf("======TESTE DA OPERACAO 1 TRANSPOSTA======\n");
+        printf("\033[1;31m===================TESTE DA OPERACAO TRANSPOSTA===================\033[0m\n");
         printf("Matriz Original: \n");
         imprimirMatriz(matriz, linhas, colunas);
         printf("Matriz Transposta: \n");
         matriz = matrizTransposta(matriz, linhas, colunas);
         imprimirMatriz(matriz, linhas, colunas);
-printf("\n");
-        printf("======TESTE DA OPERACAO 2 TRANSPOSTA======\n");
-        printf("Matriz Original: \n");
-        imprimirMatriz(matriz, linhas, colunas);
-        printf("Matriz Transposta: \n");
-        matriz = matrizTransposta(matriz, linhas, colunas);
-        imprimirMatriz(matriz, linhas, colunas);
-printf("\n");
-        printf("======TESTE DA OPERACAO_CONJUGADA======\n");
 
+printf("\n");
+       
+       /// TESTE MATRIZ CONJUGADA
             ///ALOCACAO DE MEMORIA MATRIZ CONJUGADA
 
+        printf("\033[1;31m===================TESTE DA OPERACAO CONJUGADA====================\033[0m\n");
+         
         Complexo** conjugada = (Complexo**)malloc(linhas * sizeof(Complexo));
         for (int i = 0; i < linhas; i++) {
         conjugada[i] = (Complexo*)malloc(colunas * sizeof(Complexo));
@@ -351,7 +245,7 @@ printf("\n");
         }
     }
 
-        /// ATRIBUICAO DE VALORES CONJUGADA
+                /// ATRIBUICAO DE VALORES CONJUGADA
 
             /**Os valores foram declarados manualmente e a alocacao de memoria tambem foi feita manual,
         porem estuda-se a possibilidade de criar funcoes para gerar valores aleatorios e alocar a memoria
@@ -381,8 +275,10 @@ printf("\n");
         printf("\nMatriz conjugada:\n");
         imprimirMatriz(matrizConjugadaResult, linhas, colunas);
 
+printf("\n");
+
         /// TESTE FUNCAO HERMITIANA
-        printf("======TESTE DA OPERACAO_HERMITIANA======\n");
+        printf("\033[1;31m===================TESTE DA OPERACAO HERMITIANA===================\033[0m\n");
         Complexo** hermitiana = (Complexo**)malloc(linhas * sizeof(Complexo));
         for (int i = 0; i < linhas; i++) {
             hermitiana[i] = (Complexo*)malloc(colunas * sizeof(Complexo));
@@ -432,28 +328,16 @@ printf("\n");
         free(resultadoSoma[i]);
         free(resultadoSub[i]);
         }
-        for(int i=0;i<3;i++){
-        free(ma1[i]);
-        free(ma2[i]);
-        free(resultadoSoma2[i]);
-        free(resultadoSub2[i]);
-        }
-
+     
         free(m1);
         free(m2);
         free(resultadoSoma);
         free(resultadoSub);
-        free(ma1);
-        free(ma2);
-        free(resultadoSoma2);
-        free(resultadoSub2);
-
+       
         /// LIBERAR MEMORIA PRODUTO_ESCALAR
         free(v1);
         free(v2);
-        free(ve1);
-        free(ve2);
-
+      
         /// LIBERAR MEMORIA TRANSPOSTA
         for(int i=0;i<linhas;i++){
             free(matriz[i]);
@@ -503,7 +387,7 @@ printf("\n");
 void imprimirMatriz(Complexo** matriz, int linhas, int colunas){
     for(int i=0; i<linhas; i++) {
         for(int j=0;j<colunas;j++) {
-            printf("%.2f + %2.fi\t", matriz[i][j].real, matriz[i][j].imag);
+            printf("%7.2f + %7.2fi\t", matriz[i][j].real, matriz[i][j].imag);
         }
         printf("\n");
     }
@@ -519,7 +403,7 @@ void imprimirMatriz(Complexo** matriz, int linhas, int colunas){
 
 void imprimirVetor(Complexo* vetor, int linhas){
     for(int i=0;i<linhas;i++){
-        printf("%.2f + %.2fi\t", vetor[i].real,vetor[i].imag);
+        printf("%7.2f + %7.2fi\t", vetor[i].real,vetor[i].imag);
     }
     printf("\n");
 }
