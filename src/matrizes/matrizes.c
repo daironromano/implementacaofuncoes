@@ -2,6 +2,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <gsl/gsl_matrix.h>
+#include <gsl/gsl_vector.h>
+#include <gsl/gsl_linalg.h>
+#include <gsl/gsl_rng.h>
 #include "matrizes.h"
 
 /**
@@ -320,6 +324,62 @@ printf("\n");
 
         /** Aqui estao todas os lacos para liberar memoria das matrizes, como soma, subtracao, transposta, etc.. assim como as
             demais funcoes que usaram alocacao de memoria dinamica.**/
+            
+            
+            
+	/// TESTE FUNÇÃO CALC_SVD
+	
+	gsl_rng *rng = gsl_rng_alloc(gsl_rng_default);
+	gsl_matrix *A = gsl_matrix_alloc(3, 3);
+	gsl_matrix *U = gsl_matrix_alloc(3, 3);
+	gsl_vector *S = gsl_vector_alloc(3);
+	gsl_matrix *V = gsl_matrix_alloc(3, 3);
+
+	// Preencher a matriz A com valores aleatórios
+	for (size_t i = 0; i < A->size1; i++) {
+		for (size_t j = 0; j < A->size2; j++) {
+		    gsl_matrix_set(A, i, j, gsl_rng_uniform(rng));
+		}
+	    }
+	    
+printf("\n");
+
+	     printf("\033[1;31m=====================TESTE DA OPERACAO CALC_SVD====================\033[0m\n");
+	    /// Realizar a decomposição SVD
+	calc_svd(A, U, S, V);
+	   printf("Matriz A:\n");
+	    for (size_t i = 0; i < A->size1; i++) {
+		for (size_t j = 0; j < A->size2; j++) {
+		    printf("%7.2g ", gsl_matrix_get(A, i, j));
+		}
+		printf("\n");
+	    }
+printf("\n");
+
+	    printf("Matriz V:\n");
+	    for (size_t i = 0; i < V->size1; i++) {
+		for (size_t j = 0; j < V->size2; j++) {
+		    printf("%7.2g ", gsl_matrix_get(V, i, j));
+		}
+		printf("\n");
+	    }
+printf("\n");
+	 
+	    printf("Matriz U:\n");
+	    for (size_t i = 0; i < U->size1; i++) {
+		for (size_t j = 0; j < U->size2; j++) {
+		    printf("%7.2g ", gsl_matrix_get(U, i, j));
+		}
+		printf("\n");
+	    }
+printf("\n");
+
+	    printf("Matriz S:\n");
+	    for (size_t i = 0; i < S->size; i++) {
+		printf("%7.2g\n", gsl_vector_get(S, i));
+	    }
+printf("\n");
+                       
 
         /// LIBERAR MEMORIA SOMA E SUBTRACAO
         for(int i=0;i<3;i++){
@@ -370,6 +430,13 @@ printf("\n");
             free(resultadoProduto[i]);
         }
         free(resultadoProduto);
+        
+        /// LIBERAR MEMORIA CALC_SVD
+	gsl_rng_free(rng);
+	gsl_matrix_free(A);
+	gsl_matrix_free(U);
+	gsl_vector_free(S);
+	gsl_matrix_free(V);
 
 }
 
@@ -550,6 +617,13 @@ void produtoMatricial(Complexo** mat1, Complexo** mat2, Complexo** resultado, in
         }
     }
 
+}
+
+void calc_svd(const gsl_matrix *A, gsl_matrix *U, gsl_vector *S, gsl_matrix *V) {
+    gsl_matrix_memcpy(U, A);
+
+    // Realizar a decomposição SVD em U
+    gsl_linalg_SV_decomp(U, V, S, gsl_vector_alloc(V->size2));
 }
 
 
