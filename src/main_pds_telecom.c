@@ -6,8 +6,8 @@ int main() {
 
     ///NOMES DOS INTEGRANTES
     printf("\033[1;31m==============================NOME===============================\033[0m\n");
-    printf("Nome: Dairon Romano da Silva\n\n");
-    printf("Matricula: 202206840032");
+    printf("Nome: Dairon Romano da Silva\n");
+    printf("Matricula: 202206840032\n\n");
 
     int testeTodos(void);
     testeTodos();
