@@ -11,8 +11,9 @@
 int main()
 {
     ///NOMES DOS INTEGRANTES
-    printf("\033[1;31m==============================NOMES===============================\033[0m\n");
+    printf("\033[1;31m==============================NOME===============================\033[0m\n");
     printf("Nome: Dairon Romano da Silva\n");
+    printf("Matricula: 202206840032");
     
     /// TESTE TODAS AS FUNCOEES
     void testeTodos();

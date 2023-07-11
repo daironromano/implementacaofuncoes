@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "pds_telecom.h"
 
-int* tx_data_read(const char* nome_arquivo, int* num_elementos);
-void rx_data_write(const int* vetor, int num_elementos, const char* nome_arquivo);
 
-int main() {
+int testeTodos(void) {
     const char* nome_arquivo_entrada = "arquivo_entrada.txt";
     const char* nome_arquivo_saida = "arquivo_saida.bin";
     int num_elementos;
@@ -80,36 +79,15 @@ int* tx_data_read(const char* nome_arquivo, int* num_elementos) {
 }
 
 void rx_data_write(const int* vetor, int num_elementos, const char* nome_arquivo) {
-    FILE* arquivo_saida = fopen(nome_arquivo, "wb");
+    FILE* arquivo_saida = fopen(nome_arquivo, "w");
     if (arquivo_saida == NULL) {
         printf("Erro ao abrir o arquivo de saída.\n");
         return;
     }
 
-    unsigned char byte = 0;
-    int contador_bits = 0;
-
-    for (int i = 0; i < num_elementos; i++) {
-        int valor = vetor[i];
-
-        if (valor < 0 || valor > 3) {
-            printf("Valor inválido encontrado no vetor de entrada.\n");
-            fclose(arquivo_saida);
-            return;
-        }
-
-        byte |= valor << ((3 - contador_bits) * 2);
-        contador_bits++;
-
-        if (contador_bits == 4) {
-            fputc(byte, arquivo_saida);
-            byte = 0;
-            contador_bits = 0;
-        }
-    }
-
-    // Se ainda houver bits restantes no último byte
-    if (contador_bits > 0) {
+    // Converter os números inteiros em bytes
+    for (int i = 0; i < num_elementos; i += 4) {
+        unsigned char byte = (vetor[i] << 6) | (vetor[i + 1] << 4) | (vetor[i + 2] << 2) | vetor[i + 3];
         fputc(byte, arquivo_saida);
     }
 
